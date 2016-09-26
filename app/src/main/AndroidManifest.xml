@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mzj.mandroid">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:name=".base.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/android"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".HomeAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.android.normal.bundel.BundelAct"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.android.normal.bundel.Bundel2Act"
+            android:screenOrientation="portrait"/>
+        <!--动画相关-->
+        <activity
+            android:name=".ui.android.normal.animation.ProAnimAct"
+            android:screenOrientation="portrait"/>
+        <!--DataBinding相关-->
+        <activity
+            android:name=".ui.android.normal.databinding.DataBindingAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.normal.databinding.DataBindingFirstAct"
+            android:screenOrientation="portrait"/>
+        <!--网络相关-->
+        <activity
+            android:name=".ui.android.network.NetListAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.network.retrofit.RetrofitAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.network.volley.VolleyFirstAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.network.okhttp.OkhttpAct"
+            android:screenOrientation="portrait"/>
+        <!--三级缓存-->
+        <activity
+            android:name=".ui.android.normal.cache.BitmapCacheAct"
+            android:screenOrientation="portrait"/>
+
+        <!--RxJava-->
+        <activity
+            android:name=".ui.android.rx.rxcache.RxCacheAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.rx.rxbase.RxBaseAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.rx.RxListAct"
+            android:screenOrientation="portrait"/>
+
+
+        <!--5.0Design库-->
+        <activity
+            android:name=".ui.android.normal.designsupport.DesignListAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.normal.designsupport.SimpleComponentsAct"
+            android:screenOrientation="portrait"/>
+
+
+        <!--View-->
+        <activity
+            android:name=".ui.android.view.ViewListAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.view.TouchAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".ui.android.view.beziercurve.BezierCurveAct"
+            android:screenOrientation="portrait"/>
+
+        <!--第三方框架-->
+        <!--图片缓存框架-->
+        <activity
+            android:name=".ui.android.frame.imageloader.ImageLoaderListAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.frame.imageloader.UniversalImageLoaderAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.android.frame.imageloader.GlideAct"
+            android:screenOrientation="portrait"/>
+
+        <!--JAVA-->
+        <activity
+            android:name=".ui.java.abs.AbstractAct"
+            android:label="抽象接口"
+            android:screenOrientation="portrait"/>
+
+
+        <!--设计模式-->
+        <activity
+            android:name=".ui.java.design.DesignListAct"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name=".ui.java.design.StrategyAct"
+            android:label="策略模式"
+            android:screenOrientation="portrait"/>
+
+
+        <!--算法-->
+        <activity
+            android:name=".ui.java.calculate.CalculateListAct"
+            android:screenOrientation="portrait"/>
+        <!--服务-->
+        <service android:name=".service.MusicService"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="mzj.mandroid.utils.DataBindingUtil"></import>
+
+        <variable
+            name="act"
+            type="mzj.mandroid.ui.android.network.retrofit.RetrofitAct"></variable>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"></include>
+
+        <Button
+            android:onClick="@{act.onClick}"
+            android:id="@+id/simpleBt"
+            android:text="最简单的请求实例"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+        android:onClick="@{act.onClick}"
+        android:id="@+id/rxBt"
+        android:text="retrofit+Rx的简单实例"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <Button
+            android:onClick="@{act.onClick}"
+            android:id="@+id/packBt"
+            android:text="retrofit+Rx简单封装后的请求实例"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <import type="mzj.mandroid.utils.DataBindingUtil"></import>
+
+        <variable
+            name="act"
+            type="mzj.mandroid.ui.android.normal.animation.ProAnimAct"></variable>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"></include>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+
+                android:id="@+id/proBt1"
+                android:text="透明度"
+                android:onClick="@{act.onClick}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:onClick="@{act.onClick}"
+                android:text="旋转"
+                android:id="@+id/proBt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="移动"
+                android:onClick="@{act.onClick}"
+                android:id="@+id/proBt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="伸缩"
+                android:onClick="@{act.onClick}"
+                android:id="@+id/proBt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+            <TextView
+                android:background="@color/blue"
+            android:id="@+id/proTv"
+            android:textColor="@color/black"
+            android:padding="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="精灵宝可梦"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="组合动画"
+            android:onClick="@{act.onClick}"
+            android:id="@+id/proBt5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="xml设置动画"
+            android:onClick="@{act.onClick}"
+            android:id="@+id/proBt6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:text="改变颜色"
+            android:onClick="@{act.onClick}"
+            android:id="@+id/proBt7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="改变宽度"
+            android:onClick="@{act.onClick}"
+            android:id="@+id/proBt8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

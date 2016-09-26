@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.mzj.android_knowledge_demo.HomeAct">
+
+    <data>
+
+        <variable
+            name="act"
+            type="mzj.mandroid.AndroidFrg"></variable>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+        <!--AppBarLayout目前必须是第一个嵌套在CoordinatorLayout里面的子view。-->
+        <android.support.design.widget.AppBarLayout
+            android:background="#654"
+            android:id="@+id/appbar"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:fitsSystemWindows="true"
+                app:expandedTitleMarginStart="48dp"
+                app:expandedTitleMarginEnd="64dp"
+                app:title="Android-系列">
+
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:focusableInTouchMode="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#8252"
+                    android:id="@+id/convenientBanner"
+                    app:canLoop="true"
+                   ></com.bigkoo.convenientbanner.ConvenientBanner>
+
+                <android.support.v7.widget.Toolbar
+                    android:alpha="0.8"
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:layout_collapseMode="pin"
+                    ></android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:tabIndicatorColor="#FF00FF00"
+                app:tabSelectedTextColor="#FF00FF00"
+                app:tabTextColor="#FF000000"
+                app:tabMode="scrollable"
+                app:tabGravity="center"
+                />
+        </android.support.design.widget.AppBarLayout>
+
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:visibility="gone"-->
+            <!--android:id="@+id/Rv"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+           <!--&gt;-->
+        <!--</android.support.v7.widget.RecyclerView>-->
+
+
+        <!--app:backgroundTint - 设置FAB的背景颜色。-->
+        <!--app:rippleColor - 设置FAB点击时的背景颜色。-->
+        <!--app:borderWidth - 该属性尤为重要，如果不设置0dp，那么在4.1的sdk上FAB会显示为正方形，而且在5.0以后的sdk没有阴影效果。所以设置为borderWidth="0dp"。-->
+        <!--app:elevation - 默认状态下FAB的阴影大小。-->
+        <!--app:pressedTranslationZ - 点击时候FAB的阴影大小。-->
+        <!--app:fabSize - 设置FAB的大小，该属性有两个值，分别为normal和mini，对应的FAB大小分别为56dp和40dp。-->
+        <!--src - 设置FAB的图标，Google建议符合Design设计的该图标大小为24dp。-->
+        <!--app:layout_anchor - 设置FAB的锚点，即以哪个控件为参照点设置位置。-->
+        <!--app:layout_anchorGravity - 设置FAB相对锚点的位置，值有 bottom、center、right、left、top等。-->
+
+
+
+            <android.support.v4.view.ViewPager
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+               />
+        <ImageView
+            android:id="@+id/Fab"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="end|bottom"
+            android:clickable="true"
+            android:onClick="@{act.onClick}"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/music" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

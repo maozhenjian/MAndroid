@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="mzj.mandroid.utils.DataBindingUtil"></import>
+
+        <variable
+            name="act"
+            type="mzj.mandroid.ui.android.normal.bundel.BundelAct"></variable>
+    </data>
+    <LinearLayout
+        android:id="@+id/bgLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"></include>
+        <Button
+            android:id="@+id/SBt"
+            android:onClick="@{act.onClick}"
+            android:text="Serializable传递"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/PBt"
+            android:onClick="@{act.onClick}"
+            android:text="Parcelable传递"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:contentDescription="@null"
+            android:background="@mipmap/bg_home"
+            android:id="@+id/Ig"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+
+    </LinearLayout>
+
+</layout>

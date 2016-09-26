@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <!--在 data 元素中可以使用多个 import 元素来导入需要引用的对象，和 Java 的import  语句一样。
+            其实就是根据自己的需求，导入实体类，-->
+        <!--type中声明的就是我们的用户实体类User，一定要写全，带着包名，我们给这个实体类命名为user-->
+        <import type="mzj.mandroid.ui.android.normal.databinding.datautils.DataBindingUtil"></import>
+
+        <variable
+            name="imageUrl"
+            type="String" />
+
+        <variable
+            name="user"
+            type="mzj.mandroid.ui.android.normal.databinding.model.UserBean"></variable>
+
+        <variable
+            name="click"
+            type="mzj.mandroid.ui.android.normal.databinding.model.ClickBean"></variable>
+
+        <variable
+            name="num"
+            type="mzj.mandroid.ui.android.normal.databinding.model.NumBean"></variable>
+    </data>
+    <!--原先的根节点（Root Element）-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"></include>
+        <!---->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.age}"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <!--DataBindingUtil可以调用相关方法-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{DataBindingUtil.whatName(user.index)}"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:onClick="@{click.changeAge}"
+            android:id="@+id/Bt"
+            android:text="@{num.phone}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:image="@{user.imageUrl}" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:image="@{imageUrl}" />
+
+        <EditText
+            android:id="@+id/et"
+            android:text="@={user.name}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <!--原先的根节点（Root Element）-->
+</layout>
