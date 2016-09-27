@@ -2,6 +2,7 @@ package mzj.mandroid.ui.android.frame.imageloader;
 
 import android.graphics.Bitmap;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
@@ -9,12 +10,14 @@ import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.decode.BaseImageDecoder;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.core.download.ImageDownloader;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
@@ -57,7 +60,7 @@ import mzj.mandroid.databinding.ActUniversalBinding;
  */
 
 public class UniversalImageLoaderAct extends BaseActivity<ActUniversalBinding> {
-    private String imageUrl="https://lh6.googleusercontent.com/-55osAWw3x0Q/URquUtcFr5I/AAAAAAAAAbs/rWlj1RUKrYI/s1024/A%252520Photographer.jpg";
+    private String imageUrl="http://d.hiphotos.baidu.com/zhidao/pic/item/d1160924ab18972b5702626be0cd7b899e510a52.jpg";
     @Override
     protected int getLayoutId() {
         return R.layout.act_universal;
@@ -66,7 +69,29 @@ public class UniversalImageLoaderAct extends BaseActivity<ActUniversalBinding> {
     @Override
     protected void initData() {
 //        显示图片
-//        1、	ImageLoader.getInstance().displayImage(uri, imageView);
+      	ImageLoader.getInstance().displayImage(imageUrl, binding.imageIv, new ImageLoadingListener() {
+            @Override
+            public void onLoadingStarted(String imageUri, View view) {
+                Log.e("TAG","onLoadingStarted");
+
+            }
+
+            @Override
+            public void onLoadingFailed(String imageUri, View view, FailReason failReason) {
+                Log.e("TAG","onLoadingFailed");
+            }
+
+            @Override
+            public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
+                Log.e("TAG","onLoadingComplete");
+            }
+
+            @Override
+            public void onLoadingCancelled(String imageUri, View view) {
+                Log.e("TAG","onLoadingCancelled");
+            }
+        });
+//        1  ImageLoader.getInstance().displayImage(uri, imageView, options);
 //        2、	ImageLoader.getInstance().displayImage(uri, imageView, options);
 //        3、	ImageLoader.getInstance().displayImage(uri, imageView, listener);
 //        4、	ImageLoader.getInstance().displayImage(uri, imageView, options, listener);

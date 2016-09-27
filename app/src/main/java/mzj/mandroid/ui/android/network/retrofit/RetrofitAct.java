@@ -82,7 +82,6 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
 //        Call<ResponseBody> call = service.upload(description, body);
 
 
-
         Call<Weather> call = retrofit2.create(WeatherApi.class).getWeather("1", "4026727a617ce1fbbfbff6302836eef8");
 
         // 如果要调用同步请求，只需调用execute；而发起一个异步请求则是调用enqueue。
@@ -100,7 +99,7 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
 //                }
 
 
-                Log.e("TAG",response.body().data.article_list.get(0).base_pic );//主线程
+                Log.e("TAG", response.body().data.article_list.get(0).base_pic);//主线程
                 Log.i("TAG", response.raw().toString()); //URL
                 Log.e("TAG", "当前线程:" + Thread.currentThread().getName());//主线程
                 Log.i("TAG", response.body().toString());
@@ -122,9 +121,9 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         BaseApiService apiService = retrofit.create(BaseApiService.class);
-        ArticleParam articleParam=new ArticleParam();
-        articleParam.is_rec="1";
-        articleParam.type="1";
+        ArticleParam articleParam = new ArticleParam();
+        articleParam.is_rec = "1";
+        articleParam.type = "1";
         apiService.getWeather2(
                 articleParam.getMap())
                 .subscribeOn(Schedulers.io()) //子线程访问网络
@@ -141,17 +140,17 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
                     //返回结果
                     @Override
                     public void onNext(Weather weather) {
-                        Log.e("TAG","onNext:"+weather.data.article_list.get(0).base_pic);
+                        Log.e("TAG", "onNext:" + weather.data.article_list.get(0).base_pic);
                     }
                 });
     }
 
     //Rx+retrofit简单封装后的例子
     public void retrofitPackge() {
-        ArticleParam articleParam=new ArticleParam();
-        articleParam.is_rec="1";
-        articleParam.type="1";
-        HttpMethods.getInstance().getArticleList(articleParam.getMap(),new ProgressSubscriber<Weather>(new SubscriberOnNextListener<Weather>(){
+        ArticleParam articleParam = new ArticleParam();
+        articleParam.is_rec = "1";
+        articleParam.type = "1";
+        HttpMethods.getInstance().getNetData(articleParam.getMap(), new ProgressSubscriber<Weather>(new SubscriberOnNextListener<Weather>() {
             @Override
             public void onSuccess(Weather weather) {
                 Log.e("TAG", "onSuccess:??");
@@ -164,25 +163,9 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
             public void onFail(String responseBody) {
                 Log.e("TAG", "onFail:" + responseBody);
             }
-        }, RetrofitAct.this,Weather.class));
+        }, RetrofitAct.this, Weather.class));
     }
 
-
-    //Rx+retrofit简单封装后的例子
-    public void getWorks() {
-        WorksParam articleParam=new WorksParam();
-        HttpMethods.getInstance().getArticleList(articleParam.getMap(),new ProgressSubscriber<Weather>(new SubscriberOnNextListener<Weather>() {
-
-            @Override
-            public void onSuccess(Weather weather) {
-            }
-
-            @Override
-            public void onFail(String responseBody) {
-                Log.e("TAG", "onFail:" + responseBody);
-            }
-        }, RetrofitAct.this,Weather.class));
-    }
 
     @Override
     public void onClick(View v) {
@@ -195,7 +178,6 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
                 break;
             case R.id.packBt:
                 retrofitPackge();
-//                getWorks();
                 break;
 
         }

@@ -17,7 +17,7 @@ public interface BaseApiService {
     //        @Header用来添加Header
     //        @Query用来添加查询关键字
     @POST("?m=api&a=api")
-    Observable<ResponseBody> getWeather(@QueryMap Map<String, String> maps);
+    Observable<ResponseBody> getResponse(@QueryMap Map<String, String> maps);
 
 
     @POST("?m=api&a=api")

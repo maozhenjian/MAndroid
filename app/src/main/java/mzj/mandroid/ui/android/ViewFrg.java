@@ -1,8 +1,6 @@
 package mzj.mandroid.ui.android;
 
-import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,24 +10,29 @@ import mzj.mandroid.R;
 import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.CommentListBinding;
 import mzj.mandroid.model.TitleModel;
-import mzj.mandroid.ui.android.network.NetListAct;
-import mzj.mandroid.ui.android.network.handler.HandlerAct;
-import mzj.mandroid.ui.android.network.httpconnection.HttpUrlConnectionAct;
+import mzj.mandroid.ui.android.rx.RxListAct;
+import mzj.mandroid.ui.android.rx.rxbase.RxBaseAct;
+import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
+import mzj.mandroid.ui.android.view.TouchAct;
+import mzj.mandroid.ui.android.view.ViewCoordinatesAct;
+import mzj.mandroid.ui.android.view.beziercurve.BezierCurveAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**
  * creat by mzj on 2016/9/19 16:39
  */
 
-public class NetFrg extends BaseFragment<CommentListBinding> {
+public class ViewFrg extends BaseFragment<CommentListBinding> {
     private List<TitleModel.Bean> list;
     private ListAdapter adapter;
     @Override
     public void initData() {
         list=new ArrayList<>();
-        list.add(new TitleModel.Bean("Android当前主要网络请求框架比较", NetListAct.class));
-        list.add(new TitleModel.Bean("HttpUrlConnetion+Asynctask", HttpUrlConnectionAct.class));
-        list.add(new TitleModel.Bean("Handler的使用方法", HandlerAct.class));
+        list.add(new TitleModel.Bean("坐标", ViewCoordinatesAct.class));
+        list.add(new TitleModel.Bean("事件机制", TouchAct.class));
+        list.add(new TitleModel.Bean("自定义View", TouchAct.class));
+        list.add(new TitleModel.Bean("贝赛尔曲线", BezierCurveAct.class));
+
         initList();
     }
 

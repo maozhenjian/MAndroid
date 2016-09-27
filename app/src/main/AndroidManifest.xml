@@ -48,9 +48,24 @@
         <activity
             android:name=".ui.android.network.okhttp.OkhttpAct"
             android:screenOrientation="portrait"/>
+
+        <!--<activity-->
+            <!--android:name=".ui.android.network.handler.HandlerAct"-->
+            <!--android:screenOrientation="portrait"/>-->
+        <activity
+            android:name=".ui.android.network.httpconnection.HttpUrlConnectionAct"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.android.network.handler.HandlerAct"></activity>
+
         <!--三级缓存-->
         <activity
             android:name=".ui.android.normal.cache.BitmapCacheAct"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name=".ui.android.normal.bitmap.BitmapAct"
             android:screenOrientation="portrait"/>
 
         <!--RxJava-->
@@ -82,7 +97,9 @@
         <activity
             android:name=".ui.android.view.TouchAct"
             android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".ui.android.view.ViewCoordinatesAct"
+            android:screenOrientation="portrait"/>
         <activity
             android:theme="@style/AppTheme"
             android:name=".ui.android.view.beziercurve.BezierCurveAct"

@@ -34,7 +34,7 @@ public class HttpMethods {
     private static final int DEFAULT_TIMEOUT = 5;
 
     private Retrofit retrofit;
-    private BaseApiService movieService;
+    private BaseApiService baseApiService;
 
     //构造方法私有,初始化Retrofit
     private HttpMethods() {
@@ -63,8 +63,7 @@ public class HttpMethods {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(BASE_URL)
                 .build();
-        Log.e("TAG","retrofit:"+retrofit.toString());
-        movieService = retrofit.create(BaseApiService.class);
+        baseApiService = retrofit.create(BaseApiService.class);
     }
 
     //在访问HttpMethods时创建单例
@@ -81,8 +80,8 @@ public class HttpMethods {
     /**
     * @param subscriber 由调用者传过来的观察者对象
     */
-    public <T> void getArticleList(Map parameters,Subscriber<T> subscriber) {
-        Observable observable = movieService.getWeather(parameters).map(new HttpResultFunc<T>());
+    public <T> void getNetData(Map parameters,Subscriber<T> subscriber) {
+        Observable observable = baseApiService.getResponse(parameters).map(new HttpResultFunc<T>());
         toSubscribe(observable, subscriber);
     }
 

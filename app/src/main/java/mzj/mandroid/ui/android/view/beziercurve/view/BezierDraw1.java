@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
 /**
- * creat by mzj on 2016/9/8 13:37
+ * creat by mzj on 2016/4/8 13:37
  */
 public class BezierDraw1 extends View {
     private ValueAnimator valueX;

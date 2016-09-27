@@ -9,8 +9,11 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.decode.BaseImageDecoder;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
+
+import mzj.mandroid.R;
 
 
 /**
@@ -34,15 +37,16 @@ public class App extends Application{
 //                .createDefault(this);
 
         DisplayImageOptions defaultOoptions = new DisplayImageOptions.Builder()
-//                .showImageOnLoading(R.drawable.ic_stub)
-//                .showImageOnFail(R.drawable.ic_error)
+                .showImageOnLoading(R.mipmap.ic_loading)
+                .showImageOnFail(R.mipmap.ic_loadingfail)
                 // 设置下载的图片是否缓存在内存中
                 .cacheInMemory(true)//启用内存缓存
                 .cacheOnDisk(true)//启用外部缓存
                 // 在DisplayImageOptions选项中配置bitmapConfig为Bitmap.Config.RGB_565，
                 //  因为默认是ARGB_8888， 使用RGB_565会比使用ARGB_8888少消耗2倍的内存
                 .bitmapConfig(Bitmap.Config.RGB_565)
-                .displayer(new SimpleBitmapDisplayer())
+                .displayer(new FadeInBitmapDisplayer(1000))// 图片加载好后渐入的动画时间
+
                 /**
                  *   缩放类型mageScaleType:
                  EXACTLY :图像将完全按比例缩小的目标大小
@@ -63,6 +67,7 @@ public class App extends Application{
                         .imageDecoder(new BaseImageDecoder(true))
                         .defaultDisplayImageOptions(defaultOoptions)
                         .imageDownloader(new BaseImageDownloader(mInstance)) // default
+
                         .writeDebugLogs() //打印log信息
                         .build();
         ImageLoader.getInstance().init(configuration);
