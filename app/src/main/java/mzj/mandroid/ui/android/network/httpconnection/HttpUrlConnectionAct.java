@@ -48,7 +48,6 @@ public class HttpUrlConnectionAct extends BaseActivity<ActHttpurlconnetionBindin
                 try {
                     URL url = new URL("http://fanyi.youdao.com/openapi.do?keyfrom=httpgetmysddfr&key=1415591803&type=data&doctype=json&version=1.1&q=man");
                     connection = (HttpURLConnection) url.openConnection();
-//                   connection= (HttpURLConnection) url.openConnection();
 
                     connection.setRequestMethod("GET");//请求方法
                     connection.setConnectTimeout(8000);//连接超时时间

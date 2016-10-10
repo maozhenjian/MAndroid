@@ -27,7 +27,7 @@ import rx.schedulers.Schedulers;
 /**
  * creat by mzj on 2016/9/20 11:07
  * 优秀文章：http://gank.io/post/560e15be2dca930e00da1083#toc_1 （《给 Android 开发者的 RxJava 详解》   作者：扔物线）
- *http://blog.csdn.net/shangmingchao/article/details/51125554   Glide用法
+ * http://blog.csdn.net/shangmingchao/article/details/51125554   Glide用法
  * Rx基础知识介绍以及示例代码
  * 问题一：RxJava是什么？
  *          RxJava:一个实现异步操作的库
@@ -197,13 +197,11 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
      *                          这个 Scheduler 使用的固定的线程池，大小为 CPU 核数。不要把 I/O 操作放在 computation() 中，否则 I/O 操作的等待时间会浪费 CPU。
      * 另外， Android 还有一个专用的 AndroidSchedulers.mainThread()，它指定的操作将在 Android 主线程运行。
      *
-     *
-     *
      * 有了这几个 Scheduler ，就可以使用 subscribeOn() 和 observeOn() 两个方法来对线程进行控制了。
      * * subscribeOn(): 指定 subscribe() 所发生的线程，即 Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程。
      * * observeOn(): 指定 Subscriber 所运行在的线程。或者叫做事件消费的线程。
      */
-    private void schedulerAction(){
+    private void schedulerAction() {
         Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
@@ -211,7 +209,7 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
                 subscriber.onNext(2);
                 subscriber.onNext(3);
                 subscriber.onNext(4);
-                Log.i("TAG", "Observable运行的线程："+Thread.currentThread().getName());
+                Log.i("TAG", "Observable运行的线程：" + Thread.currentThread().getName());
 
             }
         }).subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
@@ -219,7 +217,7 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
                 .subscribe(new Action1<Integer>() {
                     @Override
                     public void call(Integer number) {
-                        Log.i("TAG","Subscriber运行的线程："+ Thread.currentThread().getName());
+                        Log.i("TAG", "Subscriber运行的线程：" + Thread.currentThread().getName());
                         Log.d("TAG", "number:" + number);
                     }
                 });

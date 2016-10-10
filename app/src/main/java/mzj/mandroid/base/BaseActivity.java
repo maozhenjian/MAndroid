@@ -1,5 +1,6 @@
 package mzj.mandroid.base;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -107,7 +109,10 @@ public abstract class BaseActivity<BindingType extends ViewDataBinding> extends 
     protected abstract void initData();
 
 
-
-
+    public void getDialogLayout(@LayoutRes int resource){
+        new AlertDialog.Builder(mContext)
+                .setView(this.getLayoutInflater().inflate(resource, null))
+                .show();
+    }
 
 }

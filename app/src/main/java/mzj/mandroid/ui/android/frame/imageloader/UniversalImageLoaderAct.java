@@ -144,6 +144,7 @@ public class UniversalImageLoaderAct extends BaseActivity<ActUniversalBinding> {
                  * WeakMemoryCache（这个类缓存bitmap的总大小没有限制，唯一不足的地方就是不稳定，缓存的图片容易被回收掉）
                  */
                 .memoryCache(new WeakMemoryCache()) //这里可以配置自己的缓存类
+
                 .memoryCacheSize(2 * 1024 * 1024)   // 内存缓存的最大值
                 .memoryCacheSizePercentage(13) // default
 //                .diskCache(new UnlimitedDiscCache(cacheDir)) // default 可以自定义缓存路径

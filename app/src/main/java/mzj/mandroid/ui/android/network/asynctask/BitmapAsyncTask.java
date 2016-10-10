@@ -14,6 +14,8 @@ import java.net.URL;
 
 /**
  * creat by mzj on 2016/9/27 10:34
+ *
+ *
  */
 
 public class BitmapAsyncTask extends AsyncTask<String,Integer,Bitmap> {
@@ -34,16 +36,17 @@ public class BitmapAsyncTask extends AsyncTask<String,Integer,Bitmap> {
 
     @Override
     protected Bitmap doInBackground(String... params) {
+
         publishProgress(3);
 
         Log.e("doInBackground当前线程：",Thread.currentThread().getName());
         return   getBitmapFromURL(params[0]);
     }
 
-    //更新操作
+    //更新操作，主线程
     @Override
     protected void onProgressUpdate(Integer... values) {
-        Log.e("onProgressUpdate：",values.toString());
+        Log.e("onProgressUpdate：",values[0]+"");
         Log.e("onProgressUpdate当前线程：",Thread.currentThread().getName());
     }
 

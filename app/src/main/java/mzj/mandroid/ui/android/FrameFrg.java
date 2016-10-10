@@ -11,6 +11,7 @@ import mzj.mandroid.R;
 import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.CommentListBinding;
 import mzj.mandroid.model.TitleModel;
+import mzj.mandroid.ui.android.frame.buffknife.ButterKnifeAct;
 import mzj.mandroid.ui.android.frame.imageloader.ImageLoaderListAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
@@ -25,6 +26,7 @@ public class FrameFrg extends BaseFragment<CommentListBinding> {
     public void initData() {
         list=new ArrayList<>();
         list.add(new TitleModel.Bean("图片缓存框架", ImageLoaderListAct.class));
+        list.add(new TitleModel.Bean("ButterKnife注解框架", ButterKnifeAct.class));
         initList();
     }
 

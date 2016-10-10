@@ -12,7 +12,7 @@ import java.util.List;
 import mzj.mandroid.Adapter.TabsAdapter;
 import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.ActivityHomeBinding;
-import mzj.mandroid.java.JavaBasisFrg;
+import mzj.mandroid.ui.java.JavaBasisFrg;
 import mzj.mandroid.wiget.NetworkImageHolderView;
 
 /**

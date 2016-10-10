@@ -156,7 +156,6 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
                 Log.e("TAG", "onSuccess:??");
                 Log.e("TAG", "weather:" + weather.data.article_list.get(0).base_pic);
                 Log.e("TAG", "weather:" + weather.data.article_list.get(0).author_name);
-
             }
 
             @Override

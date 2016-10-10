@@ -1,4 +1,4 @@
-package mzj.mandroid.java;
+package mzj.mandroid.ui.java;
 
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -12,7 +12,9 @@ import mzj.mandroid.databinding.CommentListBinding;
 import mzj.mandroid.model.TitleModel;
 import mzj.mandroid.ui.java.abs.AbstractAct;
 import mzj.mandroid.ui.java.calculate.CalculateListAct;
+import mzj.mandroid.ui.java.collection.CollectionListAct;
 import mzj.mandroid.ui.java.design.DesignListAct;
+import mzj.mandroid.ui.java.thread.BaseThreadAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**
@@ -28,8 +30,8 @@ public class JavaBasisFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("设计模式", DesignListAct.class));
         list.add(new TitleModel.Bean("抽象与接口", AbstractAct.class));
         list.add(new TitleModel.Bean("算法", CalculateListAct.class));
-        list.add(new TitleModel.Bean("集合", AbstractAct.class));
-        list.add(new TitleModel.Bean("线程", AbstractAct.class));
+        list.add(new TitleModel.Bean("集合", CollectionListAct.class));
+        list.add(new TitleModel.Bean("线程", BaseThreadAct.class));
         list.add(new TitleModel.Bean("反射", AbstractAct.class));
         initList();
     }

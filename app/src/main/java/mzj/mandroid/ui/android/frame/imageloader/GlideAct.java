@@ -41,7 +41,7 @@ public class GlideAct extends BaseActivity<ActGlideBinding> {
                 .error(R.mipmap.ic_launcher)        //下载失败时显示的图片
 //                .override(300,300)                 //裁剪
                 .skipMemoryCache(true)                //是否跳过内存缓存
-                //       DiskCacheStrategy.NONE 什么都不缓存
+//        DiskCacheStrategy.NONE 什么都不缓存
 //        DiskCacheStrategy.SOURCE 仅仅只缓存原来的全分辨率的图像
 //        DiskCacheStrategy.RESULT 仅仅缓存最终的图像，即降低分辨率后的（或者是转换后的）
 //        DiskCacheStrategy.ALL 缓存所有版本的图像（默认行为）
