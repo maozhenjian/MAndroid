@@ -55,6 +55,8 @@
                     ></android.support.v7.widget.Toolbar>
 
             </android.support.design.widget.CollapsingToolbarLayout>
+
+            <!--http://www.jianshu.com/p/2b2bb6be83a8   TabLayout介绍-->
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"

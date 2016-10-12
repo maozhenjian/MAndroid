@@ -34,6 +34,7 @@ public class CalculateListAct extends BaseActivity<CommentTitleListBinding> {
         list.add(new TitleModel.Bean("冒泡排序",RxCacheAct.class));
         list.add(new TitleModel.Bean("希尔排序",RxCacheAct.class));
         list.add(new TitleModel.Bean("简单选择排序",RxCacheAct.class));
+        list.add(new TitleModel.Bean("递归函数",RecursiveAct.class));
         adapter = new ListAdapter(this,list);
         binding.Rv.setLayoutManager(new LinearLayoutManager(this));
         binding.Rv.setAdapter(adapter);

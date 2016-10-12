@@ -52,6 +52,9 @@ public class HandlerAct extends BaseActivity<ActHandlerBinding> implements View.
 
     }
 
+    /**
+     * 对发送过来的Message进行统一的管理
+     */
     private Handler handler = new Handler() {
 
         public void handleMessage(Message msg) {
@@ -74,8 +77,6 @@ public class HandlerAct extends BaseActivity<ActHandlerBinding> implements View.
         //主线程运行，执行更新UI
         @Override
         public void run() {
-
-
             i+=1;
             binding.messageTv.setText(i+"");
 //            handler.post(updateThread);
@@ -123,8 +124,7 @@ public class HandlerAct extends BaseActivity<ActHandlerBinding> implements View.
                 startActivity(new Intent(mContext,HandlerThreadAct.class));
                 break;
             case R.id.send_bt:
-
-                //子线程中主线获取数据，发送到主线
+                //子线程中获取数据，发送到主线
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -132,7 +132,6 @@ public class HandlerAct extends BaseActivity<ActHandlerBinding> implements View.
                         message.what = 0;
                         message.obj = "这是Handler传来的信息";
                         handler.sendMessage(message);
-
                     }
                 }).start();
 

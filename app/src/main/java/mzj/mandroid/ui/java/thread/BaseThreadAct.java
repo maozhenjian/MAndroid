@@ -32,7 +32,7 @@ public class BaseThreadAct extends BaseActivity<CommentTitleListBinding> {
         list.add(new TitleModel.Bean("线程的生命周期", LifeThreadAct.class));
         list.add(new TitleModel.Bean("线程同步", LockThreadAct.class));
         list.add(new TitleModel.Bean("线程通信", CommuThreadAct.class));
-        list.add(new TitleModel.Bean("线程池", CommuThreadAct.class));
+        list.add(new TitleModel.Bean("线程池", PoolThreadAct.class));
         adapter=new ListAdapter(mContext,list);
         binding.Rv.setLayoutManager(new LinearLayoutManager(mContext));
         binding.Rv.setAdapter(adapter);

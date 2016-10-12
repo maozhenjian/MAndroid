@@ -6,28 +6,73 @@
 
         <import type="mzj.mandroid.utils.DataBindingUtil"></import>
     </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
         <include layout="@layout/part_title"></include>
 
+        <ImageView
+            android:adjustViewBounds="true"
+            android:id="@+id/iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <Button
+            android:textAllCaps="false"
+            android:id="@+id/handler_thread"
+            android:text="HandlerThread相关"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:textAllCaps="false"
             android:id="@+id/send_bt"
-            android:text="Handler发送信息"
+            android:text="Handler.sendMessage发送信息"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/thread_tv"
+        <Button
+            android:textAllCaps="false"
+
+            android:id="@+id/post_tv"
+            android:text="Handler.post发送信息"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <Button
+            android:textAllCaps="false"
+            android:id="@+id/post_end_tv"
+            android:text="终止"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:textAllCaps="false"
+            android:id="@+id/probt"
+            android:text="Handler控制进度条"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:textAllCaps="false"
+            android:id="@+id/handler_tv"
+            android:text="新线程Handler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ProgressBar
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:id="@+id/probar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/message_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
+    </ScrollView>
 </layout>

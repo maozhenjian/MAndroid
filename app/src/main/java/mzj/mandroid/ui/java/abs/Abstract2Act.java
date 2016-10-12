@@ -10,7 +10,7 @@ import mzj.mandroid.databinding.ActAbstractBinding;
  * 抽象接口相关，Java编程思想P311
  */
 
-public class AbstractAct extends BaseActivity<ActAbstractBinding> implements TestListener {
+public class Abstract2Act extends BaseActivity<ActAbstractBinding> {
 
     @Override
     protected int getLayoutId() {
@@ -19,13 +19,6 @@ public class AbstractAct extends BaseActivity<ActAbstractBinding> implements Tes
 
     @Override
     protected void initData() {
-       new MidListen().setTestListener(this);
+
     }
-
-    @Override
-    public int addNum(int num) {
-        return num+1;
-    }
-
-
 }

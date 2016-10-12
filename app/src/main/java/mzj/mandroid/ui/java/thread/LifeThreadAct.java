@@ -51,24 +51,30 @@ public class LifeThreadAct extends BaseActivity<ActLifeThreadBinding> implements
 
             case R.id.joinThread:
                 getDialogLayout(R.layout.dialog_java_thread_join);
-                for (int i=0;i<100;i++){
-                    Log.e("TAG",Thread.currentThread().getName()+"   "+i);
-                    if (i==20){
-                      FirstThread joinThread=  new FirstThread();
-                      joinThread.start();
-                        /**
-                         * 在主线程中调用了joinThread的join(),主线程将被阻塞，
-                         * 必须等joinThread执行完才能继续执行
-                         * */
-                        try {
-                            joinThread.join();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }
+                joinTest();
                 break;
+        }
+    }
+
+
+
+    private void joinTest(){
+        for (int i=0;i<100;i++){
+            Log.e("TAG",Thread.currentThread().getName()+"   "+i);
+            if (i==20){
+                FirstThread joinThread=  new FirstThread();
+                joinThread.start();
+                /**
+                 * 在主线程中调用了joinThread的join(),主线程将被阻塞，
+                 * 必须等joinThread执行完才能继续执行
+                 * */
+                try {
+                    joinThread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+            }
         }
     }
 

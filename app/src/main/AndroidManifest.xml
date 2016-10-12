@@ -49,15 +49,12 @@
             android:name=".ui.android.network.okhttp.OkhttpAct"
             android:screenOrientation="portrait"/>
 
-        <!--<activity-->
-            <!--android:name=".ui.android.network.handler.HandlerAct"-->
-            <!--android:screenOrientation="portrait"/>-->
         <activity
             android:name=".ui.android.network.httpconnection.HttpUrlConnectionAct"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.android.network.handler.HandlerAct"></activity>
-
+        <activity android:name=".ui.android.network.handler.HandlerAct"/>
+        <activity android:name=".ui.android.network.handler.HandlerThreadAct"/>
         <!--三级缓存-->
         <activity
             android:name=".ui.android.normal.cache.BitmapCacheAct"
@@ -94,6 +91,10 @@
         <activity
             android:name=".ui.android.view.ViewListAct"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.view.customview.CustomViewListAct"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.android.view.TouchAct"
             android:screenOrientation="portrait"/>
@@ -117,12 +118,19 @@
             android:name=".ui.android.frame.imageloader.GlideAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.android.frame.buffknife.ButterKnifeAct"
+            android:screenOrientation="portrait"/>
+
         <!--JAVA-->
         <activity
             android:name=".ui.java.abs.AbstractAct"
             android:label="抽象接口"
             android:screenOrientation="portrait"/>
-
+        <!--<activity-->
+            <!--android:name=".ui.java.abs.Abstract2Act"-->
+            <!--android:label="抽象接口"-->
+            <!--android:screenOrientation="portrait"/>-->
 
         <!--设计模式-->
         <activity
@@ -136,10 +144,53 @@
             android:screenOrientation="portrait"/>
 
 
+        <!--集合-->
+        <activity
+            android:name=".ui.java.collection.CollectionListAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.java.collection.ArrayListAct"
+            android:label="ArrayList"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.java.collection.MapAct"
+            android:label="Map"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.java.collection.SetAct"
+            android:label="Set"
+            android:screenOrientation="portrait"/>
+
+
         <!--算法-->
         <activity
             android:name=".ui.java.calculate.CalculateListAct"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.java.calculate.RecursiveAct"
+            android:screenOrientation="portrait"/>
+        <!--线程-->
+        <activity
+            android:name=".ui.java.thread.CreatThreadAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.java.thread.LifeThreadAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.java.thread.LockThreadAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.java.thread.CommuThreadAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.java.thread.PoolThreadAct"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.java.thread.BaseThreadAct"
+            android:screenOrientation="portrait"/>
+
         <!--服务-->
         <service android:name=".service.MusicService"/>
     </application>

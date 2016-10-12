@@ -27,6 +27,8 @@ public class LockThreadAct extends BaseActivity<ActLockThreadBinding> implements
     protected void initData() {
     binding.lockMoney.setOnClickListener(this);
 
+
+
     }
 
 
@@ -40,8 +42,6 @@ public class LockThreadAct extends BaseActivity<ActLockThreadBinding> implements
                 new DrawThread("毛振坚",account,600).start();
                 new DrawThread("杨丽慈",account,600).start();
                 break;
-
-
         }
     }
 
