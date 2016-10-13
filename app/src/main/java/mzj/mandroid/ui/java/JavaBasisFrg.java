@@ -11,6 +11,7 @@ import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.CommentListBinding;
 import mzj.mandroid.model.TitleModel;
 import mzj.mandroid.ui.java.abs.AbstractAct;
+import mzj.mandroid.ui.java.annotation.AnnotationAct;
 import mzj.mandroid.ui.java.calculate.CalculateListAct;
 import mzj.mandroid.ui.java.collection.CollectionListAct;
 import mzj.mandroid.ui.java.design.DesignListAct;
@@ -33,6 +34,7 @@ public class JavaBasisFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("集合", CollectionListAct.class));
         list.add(new TitleModel.Bean("线程", BaseThreadAct.class));
         list.add(new TitleModel.Bean("反射", AbstractAct.class));
+        list.add(new TitleModel.Bean("注解", AnnotationAct.class));
         initList();
     }
 

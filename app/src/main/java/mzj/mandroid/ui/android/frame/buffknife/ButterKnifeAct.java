@@ -24,6 +24,7 @@ public class ButterKnifeAct extends AppCompatActivity {
     @BindView(R.id.text1)
     TextView text1;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,5 @@ public class ButterKnifeAct extends AppCompatActivity {
         Log.e("TAG","button1:onClick");
         text1.setText("11111");
     }
-
 
 }

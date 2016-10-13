@@ -170,6 +170,13 @@
         <activity
             android:name=".ui.java.calculate.RecursiveAct"
             android:screenOrientation="portrait"/>
+
+
+        <!--注解-->
+        <activity
+            android:name=".ui.java.annotation.AnnotationAct"
+            android:screenOrientation="portrait"/>
+
         <!--线程-->
         <activity
             android:name=".ui.java.thread.CreatThreadAct"
@@ -190,6 +197,7 @@
         <activity
             android:name=".ui.java.thread.BaseThreadAct"
             android:screenOrientation="portrait"/>
+
 
         <!--服务-->
         <service android:name=".service.MusicService"/>

@@ -103,9 +103,7 @@ public class UniversalImageLoaderAct extends BaseActivity<ActUniversalBinding> {
      */
     private void initImageloaderDefault(){
         //创建默认的ImageLoader配置参数
-        ImageLoaderConfiguration configuration = ImageLoaderConfiguration
-                .createDefault(this);
-
+        ImageLoaderConfiguration configuration = ImageLoaderConfiguration .createDefault(this);
         //Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(configuration);
         ImageLoader.getInstance().displayImage(imageUrl,binding.imageIv);

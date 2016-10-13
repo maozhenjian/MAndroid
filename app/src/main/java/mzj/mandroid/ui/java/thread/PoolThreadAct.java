@@ -87,10 +87,11 @@ public class PoolThreadAct extends BaseActivity<ActPoolThreadBinding> implements
 
     /**
      * newFixedThreadPool
+     *     创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
+     *    因为线程池大小为3，每个任务输出index后sleep 2秒，所以每两秒打印3个数字。
+     *   定长线程池的大小最好根据系统资源进行设置。如Runtime.getRuntime().availableProcessors()。
      */
-//    创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
-//    因为线程池大小为3，每个任务输出index后sleep 2秒，所以每两秒打印3个数字。
-//    定长线程池的大小最好根据系统资源进行设置。如Runtime.getRuntime().availableProcessors()。
+
     private void newFixedThreadPool() {
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
         for (int i = 0; i < 10; i++) {
@@ -98,19 +99,19 @@ public class PoolThreadAct extends BaseActivity<ActPoolThreadBinding> implements
             /**
              * submit(Runnable x) 返回一个future。可以用这个future来判断任务是否成功完成。
              */
-            Future future =  fixedThreadPool.submit(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Log.e("TAG",Thread.currentThread().getName()+index);
-                        Log.e("TAG","Runtime.getRuntime().availableProcessors():::"+Runtime.getRuntime().availableProcessors()+"");
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                Future future =  fixedThreadPool.submit(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Log.e("TAG",Thread.currentThread().getName()+index);
+                            Log.e("TAG","Runtime.getRuntime().availableProcessors():::"+Runtime.getRuntime().availableProcessors()+"");
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-            });
-            try {
+                });
+                try {
                 if(future.get()==null){//如果Future's get返回null，任务完成
                     Log.e("TAG","任务完成");
                 }
