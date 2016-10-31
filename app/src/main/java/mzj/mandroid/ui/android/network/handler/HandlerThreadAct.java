@@ -37,7 +37,6 @@ public class HandlerThreadAct extends BaseActivity<ActHandlerThreadBinding> {
 
     @Override
     protected void initData() {
-        //创建后台线程
         initBackThread();
     }
 
@@ -59,7 +58,6 @@ public class HandlerThreadAct extends BaseActivity<ActHandlerThreadBinding> {
     }
 
     private void initBackThread() {
-        
         mCheckMsgThread = new HandlerThread("check-message-coming");
         mCheckMsgThread.start();
         mCheckMsgHandler = new Handler(mCheckMsgThread.getLooper()) {

@@ -14,15 +14,15 @@
 
         <variable
             name="user"
-            type="mzj.mandroid.ui.android.normal.databinding.model.UserBean"></variable>
+            type="mzj.mandroid.ui.android.normal.databinding.model.UserBean"/>
 
         <variable
             name="click"
-            type="mzj.mandroid.ui.android.normal.databinding.model.ClickBean"></variable>
+            type="mzj.mandroid.ui.android.normal.databinding.model.ClickBean"/>
 
         <variable
             name="num"
-            type="mzj.mandroid.ui.android.normal.databinding.model.NumBean"></variable>
+            type="mzj.mandroid.ui.android.normal.databinding.model.NumBean"/>
     </data>
     <!--原先的根节点（Root Element）-->
     <LinearLayout

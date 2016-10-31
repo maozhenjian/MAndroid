@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="mzj.mandroid.utils.DataBindingUtil"/>
+        <variable
+            name="act"
+            type="mzj.mandroid.ui.android.normal.animation.TweenAnimAct"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/xml_alpha"
+                    android:textAllCaps="false"
+                    android:text="XML:Alpha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/xml_translate"
+                    android:textAllCaps="false"
+                    android:text="XML:Translate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/xml_scale"
+                    android:textAllCaps="false"
+                    android:text="XML:Scale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/xml_roate"
+                    android:textAllCaps="false"
+                    android:text="XML:Rotate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/code_alpha"
+                    android:textAllCaps="false"
+                    android:text="Code:Alpha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/code_translate"
+                    android:textAllCaps="false"
+                    android:text="Code:Translate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/code_scale"
+                    android:textAllCaps="false"
+                    android:text="Code:Scale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:id="@+id/code_rotate"
+                    android:textAllCaps="false"
+                    android:text="Code:Rotate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:textAllCaps="false"
+                    android:text="XML:AnimationSet"
+                    android:id="@+id/xml_animationSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:onClick="@{act.onClick}"
+                    android:textAllCaps="false"
+                    android:text="Code:AnimationSet"
+                    android:id="@+id/code_animationSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/anim_iv"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+
+    </LinearLayout>
+
+</layout>

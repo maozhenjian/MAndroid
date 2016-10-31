@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  android:interpolator 动画的渲染器
+  1、accelerate_interpolator(动画加速器) 使动画在开始的时候 最慢,然后逐渐加速
+  2、decelerate_interpolator(动画减速器)使动画在开始的时候 最快,然后逐渐减速
+  3、accelerate_decelerate_interpolator（动画加速减速器）
+           中间位置分层:  使动画在开始的时候 最慢,然后逐渐加速
+          使动画在开始的时候 最快,然后逐渐减速  结束的位置最慢
+ fromXDelta  动画起始位置的横坐标
+ toXDelta    动画起结束位置的横坐标
+ fromYDelta  动画起始位置的纵坐标
+ toYDelta   动画结束位置的纵坐标
+ duration 动画的持续时间
+ -->
+    <translate xmlns:android="http://schemas.android.com/apk/res/android"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:fromXDelta="0"
+        android:toXDelta="320"
+        android:fromYDelta="0"
+        android:toYDelta="0"
+        android:duration="2000"/>

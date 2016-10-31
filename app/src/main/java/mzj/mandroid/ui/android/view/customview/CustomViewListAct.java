@@ -12,6 +12,9 @@ import mzj.mandroid.databinding.ActNetListBinding;
 import mzj.mandroid.databinding.CommentTitleListBinding;
 import mzj.mandroid.model.TitleModel;
 import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
+import mzj.mandroid.ui.android.view.customview.baseview.BaseViewListAct;
+import mzj.mandroid.ui.android.view.customview.midview.MidViewListAct;
+import mzj.mandroid.ui.android.view.customview.superview.SuperViewListAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**
@@ -27,7 +30,9 @@ public class CustomViewListAct extends BaseActivity<CommentTitleListBinding> {
     @Override
     protected void initData() {
         List<TitleModel.Bean> list= new ArrayList<>();
-        list.add(new TitleModel.Bean("XImageView",RxCacheAct.class));
+        list.add(new TitleModel.Bean("简单自定义View",BaseViewListAct.class));
+        list.add(new TitleModel.Bean("一般可用性自定义View",MidViewListAct.class));
+        list.add(new TitleModel.Bean("高级View",SuperViewListAct.class));
 
         adapter = new ListAdapter(this,list);
         binding.Rv.setLayoutManager(new LinearLayoutManager(this));

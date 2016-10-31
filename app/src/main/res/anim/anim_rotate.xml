@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+fromDegrees:表示旋转的起始角度
+toDegrees:表示旋转的结束角度
+repeatCount:旋转的次数  默认值是0 代表旋转1次  如果值是repeatCount=4 旋转5次，值为-1或者infinite时，表示补间动画永不停止
+repeatMode 设置重复的模式。默认是restart。当repeatCount的值大于0或者为infinite时才有效。
+repeatCount=-1 或者infinite 循环了
+还可以设成reverse，表示偶数次显示动画时会做与动画文件定义的方向相反的方向动行。
+ -->
+<rotate
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:fromDegrees="0"
+        android:toDegrees="7200"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:duration="3000"/>

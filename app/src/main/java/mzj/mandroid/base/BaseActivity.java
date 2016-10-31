@@ -24,6 +24,7 @@ import mzj.mandroid.R;
  * Created by mzj on 16/4/14.
  */
 public abstract class BaseActivity<BindingType extends ViewDataBinding> extends AppCompatActivity {
+    public String TAG="TAG:"+getClass().getSimpleName();
     protected Context mContext;
     public BindingType binding;
     TextView toolbarTitle;
@@ -33,7 +34,7 @@ public abstract class BaseActivity<BindingType extends ViewDataBinding> extends 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i("TAG",getClass().getSimpleName().toString());
+        Log.i("TAG",getClass().getSimpleName());
         mContext = this;
         int layoutId = getLayoutId();
         if (layoutId != 0) {
@@ -64,10 +65,12 @@ public abstract class BaseActivity<BindingType extends ViewDataBinding> extends 
                 }
             });
             toolbar.setLogoDescription("xxxx");
-            preliminary();
+
 
         }
 
+
+        preliminary();
     }
 
 

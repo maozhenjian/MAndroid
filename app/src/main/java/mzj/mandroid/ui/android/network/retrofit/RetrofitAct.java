@@ -1,8 +1,13 @@
 package mzj.mandroid.ui.android.network.retrofit;
 
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
@@ -10,13 +15,16 @@ import mzj.mandroid.databinding.ActRetrofitBinding;
 import mzj.mandroid.ui.android.network.retrofit.api.BaseApiService;
 import mzj.mandroid.ui.android.network.retrofit.api.WeatherApi;
 import mzj.mandroid.ui.android.network.retrofit.http.HttpMethods;
+import mzj.mandroid.ui.android.network.retrofit.model.Headlines;
 import mzj.mandroid.ui.android.network.retrofit.model.Weather;
 import mzj.mandroid.ui.android.network.retrofit.param.ArticleParam;
 import mzj.mandroid.ui.android.network.retrofit.param.WorksParam;
 import mzj.mandroid.ui.android.network.retrofit.subscribers.ProgressSubscriber;
 import mzj.mandroid.ui.android.network.retrofit.subscribers.SubscriberOnNextListener;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 
+import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
 
 import retrofit2.Call;
@@ -57,7 +65,6 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
      */
     //retrofit请求的一个最简单的例子
     public void retrofitSimple() {
-
         String API_URL = "http://artist.beyondin.com/";
         Retrofit retrofit2 = new Retrofit.Builder()
                 //  开启Log
@@ -115,33 +122,55 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
 
     //retrofit+RxJava
     public void retrofitRx() {
+        //手动创建一个OkHttpClient并设置超时时间
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        // 开启Log 拦截器
+        builder .addNetworkInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)).build();
+
+        builder.addInterceptor(new Interceptor() {
+            @Override
+            public okhttp3.Response intercept(Chain chain) throws IOException {
+                Request request = chain.request()
+                        .newBuilder()
+                        .addHeader("CUSTOM_HEADER", "Yahoo")
+                        .addHeader("ANOTHER_CUSTOM_HEADER", "Google")
+                        .addHeader("Cookie", "PHPSESSION=4dlres5tnvdrd37q9gfibs2966")
+                        .build();
+                return chain.proceed(request);
+            }
+        });
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://artist.beyondin.com/")
+                .client(builder.build())
+                .baseUrl("http://api.artgoer.cn:8084/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         BaseApiService apiService = retrofit.create(BaseApiService.class);
-        ArticleParam articleParam = new ArticleParam();
-        articleParam.is_rec = "1";
-        articleParam.type = "1";
-        apiService.getWeather2(
-                articleParam.getMap())
+//        ArticleParam articleParam = new ArticleParam();
+//        articleParam.is_rec = "1";
+//        articleParam.type = "1";
+        HashMap<String,String> map=new HashMap<>();
+        map.put("token","df68e038-143e-41cb-b554-456f78f184fc");
+        map.put("pageIndex","1");
+
+        apiService.getHeadliness("1","df68e038-143e-41cb-b554-456f78f184fc")
                 .subscribeOn(Schedulers.io()) //子线程访问网络
                 .observeOn(AndroidSchedulers.mainThread()) //回调到主线程
-                .subscribe(new Subscriber<Weather>() {
+                .subscribe(new Subscriber<Headlines>() {
                     @Override
                     public void onCompleted() {
+                        Log.e("TAG", "onCompleted");
                     }
 
                     @Override
                     public void onError(Throwable e) {
                     }
 
-                    //返回结果
                     @Override
-                    public void onNext(Weather weather) {
-                        Log.e("TAG", "onNext:" + weather.data.article_list.get(0).base_pic);
+                    public void onNext(Headlines headlines) {
+                        Log.e("TAG", "onNext:" + headlines.data.exhibitList.get(0).exhibitArtistList.get(0).exhibitCity);
                     }
+
                 });
     }
 

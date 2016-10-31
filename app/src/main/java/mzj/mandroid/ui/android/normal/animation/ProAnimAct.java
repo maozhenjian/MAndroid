@@ -105,7 +105,7 @@ public class ProAnimAct extends BaseActivity<ActProAnimBinding> implements View.
                 animator3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                     @Override
                     public void onAnimationUpdate(ValueAnimator valueAnimator) {
-
+                       Log.e("TAG",valueAnimator.getAnimatedValue()+"");
                     }
                 });
                 break;

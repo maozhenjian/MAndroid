@@ -16,6 +16,7 @@ import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
 import mzj.mandroid.ui.android.view.TouchAct;
 import mzj.mandroid.ui.android.view.ViewCoordinatesAct;
 import mzj.mandroid.ui.android.view.beziercurve.BezierCurveAct;
+import mzj.mandroid.ui.android.view.customview.CustomViewListAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**
@@ -30,7 +31,7 @@ public class ViewFrg extends BaseFragment<CommentListBinding> {
         list=new ArrayList<>();
         list.add(new TitleModel.Bean("坐标", ViewCoordinatesAct.class));
         list.add(new TitleModel.Bean("事件机制", TouchAct.class));
-        list.add(new TitleModel.Bean("自定义View", TouchAct.class));
+        list.add(new TitleModel.Bean("自定义View", CustomViewListAct.class));
         list.add(new TitleModel.Bean("贝赛尔曲线", BezierCurveAct.class));
 
         initList();

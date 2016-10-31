@@ -1,7 +1,11 @@
 package mzj.mandroid.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
@@ -29,19 +33,6 @@ public class DeviceUtil {
     }
 
 
-
-    /**
-     * 获得屏幕的宽和高
-     */
-    private void getScreenInfo(Context context) {
-        // 方法1 Android获得屏幕的宽和高
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        Display display = wm.getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int screenWidth = size.x;
-        int screenHeight = size.y;
-    }
 
 
     /**
@@ -73,10 +64,39 @@ public class DeviceUtil {
     /**
      * 应用程序最高可用内存是多少。
      */
-    public int getMaxMemory() {
+    public static int getMaxMemory() {
         int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
         Log.e("TAG", "(该应用程序最高可用内存)Max memory is " + maxMemory + "KB");
         return maxMemory;
     }
+
+    /**
+     * 获取状态栏高度
+     */
+    public static int getStatusBarHeight(Activity context) {
+        Rect frame = new Rect();
+        context .getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        return statusBarHeight;
+    }
+
+
+
+    /**
+     * 获取版本号
+     * @return 当前应用的版本号
+     */
+    public static String getVersion(Context context) {
+        try {
+            PackageManager manager = context.getPackageManager();
+            PackageInfo info = manager.getPackageInfo(context.getPackageName(), 0);
+            String version = info.versionName;
+            return "当前版本： " + version;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
 
 }

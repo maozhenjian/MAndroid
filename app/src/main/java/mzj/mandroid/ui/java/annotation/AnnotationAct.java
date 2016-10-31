@@ -29,4 +29,7 @@ public class AnnotationAct extends Activity{
         ViewInjectUtils.inject(this);
         button.setText("我是click前的button");
     }
+
+
+
 }

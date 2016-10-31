@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mzj.mandroid">
     <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 向SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:name=".base.App"
         android:allowBackup="true"
@@ -27,6 +34,20 @@
         <activity
             android:name=".ui.android.normal.animation.ProAnimAct"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.normal.animation.AnimListAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.normal.animation.FrameAnimAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.normal.animation.TweenAnimAct"
+            android:screenOrientation="portrait"/>
+
+
         <!--DataBinding相关-->
         <activity
             android:name=".ui.android.normal.databinding.DataBindingAct"
@@ -47,6 +68,10 @@
 
         <activity
             android:name=".ui.android.network.okhttp.OkhttpAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.network.socket.SocketTestAct"
             android:screenOrientation="portrait"/>
 
         <activity
@@ -86,7 +111,10 @@
             android:name=".ui.android.normal.designsupport.SimpleComponentsAct"
             android:screenOrientation="portrait"/>
 
-
+<!--运行时权限问题-->
+        <activity
+            android:name=".ui.android.normal.permission.PermissionAct"
+            android:screenOrientation="portrait"/>
         <!--View-->
         <activity
             android:name=".ui.android.view.ViewListAct"
@@ -94,6 +122,26 @@
 
         <activity
             android:name=".ui.android.view.customview.CustomViewListAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.view.customview.baseview.BaseViewListAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.view.customview.midview.MidViewListAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.view.customview.superview.SuperViewListAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.view.customview.midview.AddToCartViewAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.view.customview.baseview.CodeViewAct"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.android.view.TouchAct"
@@ -177,6 +225,15 @@
             android:name=".ui.java.annotation.AnnotationAct"
             android:screenOrientation="portrait"/>
 
+
+        <!--IO-->
+        <activity
+            android:name=".ui.java.io.FileAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.java.io.IOAct"
+            android:screenOrientation="portrait"/>
         <!--线程-->
         <activity
             android:name=".ui.java.thread.CreatThreadAct"
@@ -196,6 +253,11 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.java.thread.BaseThreadAct"
+            android:screenOrientation="portrait"/>
+
+        <!--网络-->
+        <activity
+            android:name=".ui.java.net.NetAct"
             android:screenOrientation="portrait"/>
 
 

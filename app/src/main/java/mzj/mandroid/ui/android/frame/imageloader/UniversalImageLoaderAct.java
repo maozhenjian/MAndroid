@@ -18,6 +18,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.core.download.ImageDownloader;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+import com.nostra13.universalimageloader.core.process.BitmapProcessor;
 
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
@@ -164,7 +165,12 @@ public class UniversalImageLoaderAct extends BaseActivity<ActUniversalBinding> {
                 .delayBeforeLoading(0) // 下载前的延迟时间
                 .cacheInMemory(false) // default  设置下载的图片是否缓存在内存中
                 .cacheOnDisk(false)  // default  设置下载的图片是否缓存在SD卡中
-        //      .preProcessor(...)
+                .preProcessor(new BitmapProcessor() {
+                   @Override
+                   public Bitmap process(Bitmap bitmap) {
+                       return null;
+                   }
+               })   //图片处理器
         //      .postProcessor(...)
         //      .extraForDownloader(...)
                 .considerExifParams(false) // default

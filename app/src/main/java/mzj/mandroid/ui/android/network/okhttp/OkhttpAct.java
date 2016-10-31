@@ -23,6 +23,7 @@ import mzj.mandroid.base.BaseActivity;
 import mzj.mandroid.databinding.ActOkhttpBinding;
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Headers;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -31,6 +32,11 @@ import okhttp3.Response;
  * Created by 振坚 on 2016/8/4.
  *
  * http://www.imooc.com/api/teacher?type=4&num=30
+ *
+ *
+ *
+ * 文章：http://www.jianshu.com/p/aad5aacd79bf     OkHttp3源码分析[综述]
+ * https://github.com/square/okhttp/wiki/Recipes    官方文档
  */
 public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.OnClickListener {
     OkHttpClient mOkHttpClient;
@@ -82,12 +88,77 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String s = response.body().string();
+                response.body().byteStream();
                 Log.i("TAG", s);
                 Log.i("TAG", "当前线程：" + Thread.currentThread().toString());
             }
         });
     }
+    private final OkHttpClient client = new OkHttpClient();
 
+    /**
+     * 同步
+     * @throws Exception
+     */
+    public void run() throws Exception {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Request request = new Request.Builder()
+                        .url("http://publicobject.com/helloworld.txt")
+                        .build();
+
+                Response response;
+                try {
+                    response = client.newCall(request).execute();
+                    if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+                    Headers responseHeaders = response.headers();
+                    for (int i = 0; i < responseHeaders.size(); i++) {
+                        Log.e(TAG,responseHeaders.name(i) + ": " + responseHeaders.value(i));
+                    }
+
+                    Log.e(TAG,response.body().string());
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+
+    }
+
+    /**
+     * 异步
+     *
+     * @throws Exception
+     */
+    public void asynchronousGet() throws Exception {
+        Request request = new Request.Builder()
+                .url("http://publicobject.com/helloworld.txt")
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+                Headers responseHeaders = response.headers();
+
+                for (int i = 0, size = responseHeaders.size(); i < size; i++) {
+                    Log.e(TAG, responseHeaders.name(i) + ": " + responseHeaders.value(i));
+                }
+
+                Log.e(TAG, response.body().string());
+            }
+        });
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -97,6 +168,22 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
             case R.id.okhttp:
                 getInfo();
                 break;
+
+            case R.id.synchronous_get:
+                try {
+                    run();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.asynchronous_get:
+                try {
+                    asynchronousGet();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+
         }
     }
 
@@ -108,6 +195,7 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
             Log.i("TAG", "onError" + id);
             binding.Tv.setText("onError:" + e.getMessage());
         }
+
 
         @Override
         public void onResponse(String response, int id) {
@@ -122,7 +210,6 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
                     break;
             }
         }
-
     }
 
     //配置okHttp(鸿洋工具类库),在APP中初始化

@@ -11,10 +11,10 @@ import mzj.mandroid.R;
 import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.CommentListBinding;
 import mzj.mandroid.model.TitleModel;
-import mzj.mandroid.ui.android.normal.animation.ProAnimAct;
+import mzj.mandroid.ui.android.normal.permission.PermissionAct;
+import mzj.mandroid.ui.android.normal.animation.AnimListAct;
 import mzj.mandroid.ui.android.normal.bitmap.BitmapAct;
 import mzj.mandroid.ui.android.normal.bundel.BundelAct;
-import mzj.mandroid.ui.android.normal.cache.BitmapCacheAct;
 import mzj.mandroid.ui.android.normal.databinding.DataBindingFirstAct;
 import mzj.mandroid.ui.android.normal.designsupport.DesignListAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
@@ -29,14 +29,13 @@ public class BasisFrg extends BaseFragment<CommentListBinding> {
     @Override
     public void initData() {
         list=new ArrayList<>();
-        list.add(new TitleModel.Bean("Budle对象值传递Demo", BundelAct.class));
+        list.add(new TitleModel.Bean("Bundle对象值传递Demo", BundelAct.class));
         list.add(new TitleModel.Bean("DataBinding实例Demo", DataBindingFirstAct.class));
-        list.add(new TitleModel.Bean("关于动画的实例解析", ProAnimAct.class));
-//        list.add(new TitleModel.Bean("Android当前主要网络请求框架比较", NetListAct.class));
+        list.add(new TitleModel.Bean("关于动画的实例解析", AnimListAct.class));
         list.add(new TitleModel.Bean("Bitmap相关操作", BitmapAct.class));
-//        list.add(new TitleModel.Bean("RxJava系列全面解析", RxListAct.class));
         list.add(new TitleModel.Bean("2015Design库组件使用详解", DesignListAct.class));
-//        list.add(new TitleModel.Bean("View", ViewListAct.class));
+        list.add(new TitleModel.Bean("ViewPager的各种使用", DesignListAct.class));
+        list.add(new TitleModel.Bean("6.0运行时权限问题", PermissionAct.class));
         initList();
     }
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="mzj.mandroid.utils.DataBindingUtil"></import>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"></include>
+
+        <Button
+            android:textAllCaps="false"
+            android:text="LinkMap"
+            android:id="@+id/link_map_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:textAllCaps="false"
+            android:text="LRULinkedHashMap"
+            android:id="@+id/lru_linkedHashMap_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</layout>

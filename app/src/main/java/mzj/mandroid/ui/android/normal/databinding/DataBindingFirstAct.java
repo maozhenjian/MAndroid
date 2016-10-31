@@ -59,7 +59,6 @@ public class DataBindingFirstAct extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-
         }
 
         @Override
@@ -68,8 +67,8 @@ public class DataBindingFirstAct extends AppCompatActivity {
         }
 
         @Override
-        public void beforeTextChanged(CharSequence s, int start, int count,
-                                      int after) {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
 
         }
 

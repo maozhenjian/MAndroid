@@ -34,7 +34,7 @@ public class CollectionListAct extends BaseActivity<ActCollectionListBinding> {
     protected void initData() {
         ImageLoader.getInstance().displayImage("http://images2015.cnblogs.com/blog/862876/201602/862876-20160227193813393-1620063866.png",binding.iv);
         List<TitleModel.Bean> list= new ArrayList<>();
-        list.add(new TitleModel.Bean("ArrayList",ArrayListAct.class));
+        list.add(new TitleModel.Bean("List",ArrayListAct.class));
         list.add(new TitleModel.Bean("Map",MapAct.class));
         list.add(new TitleModel.Bean("Set",SetAct.class));
         adapter = new ListAdapter(this,list);

@@ -68,7 +68,7 @@ public class App extends Application{
                         .defaultDisplayImageOptions(defaultOoptions)
                         .imageDownloader(new BaseImageDownloader(mInstance)) // default
 
-                        .writeDebugLogs() //打印log信息
+//                        .writeDebugLogs() //打印log信息
                         .build();
         ImageLoader.getInstance().init(configuration);
     }
