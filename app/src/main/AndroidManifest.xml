@@ -16,10 +16,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".HomeAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -111,29 +111,34 @@
             android:name=".ui.android.normal.designsupport.SimpleComponentsAct"
             android:screenOrientation="portrait"/>
 
-<!--运行时权限问题-->
+        <!--运行时权限问题-->
         <activity
             android:name=".ui.android.normal.permission.PermissionAct"
             android:screenOrientation="portrait"/>
         <!--View-->
-        <activity
-            android:name=".ui.android.view.ViewListAct"
-            android:screenOrientation="portrait"/>
+        <!--<activity-->
+            <!--android:name=".ui.android.view.ViewListAct"-->
+            <!--android:screenOrientation="portrait"/>-->
 
         <activity
             android:name=".ui.android.view.customview.CustomViewListAct"
             android:screenOrientation="portrait"/>
 
+        <!--View::Base-->
         <activity
             android:name=".ui.android.view.customview.baseview.BaseViewListAct"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.android.view.customview.midview.MidViewListAct"
+            android:name=".ui.android.view.customview.baseview.CodeViewAct"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.android.view.customview.superview.SuperViewListAct"
+            android:name=".ui.android.view.customview.baseview.BaseViewShowAct"
+            android:screenOrientation="portrait"/>
+        <!--View::Mid-->
+        <activity
+            android:name=".ui.android.view.customview.midview.MidViewListAct"
             android:screenOrientation="portrait"/>
 
         <activity
@@ -141,19 +146,40 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.android.view.customview.baseview.CodeViewAct"
+            android:name=".ui.android.view.customview.midview.LoadingAct"
             android:screenOrientation="portrait"/>
+
+        <!--View::Super-->
+        <activity
+            android:name=".ui.android.view.customview.superview.SuperViewListAct"
+            android:screenOrientation="portrait"/>
+
+
+
+
+
+
         <activity
             android:name=".ui.android.view.TouchAct"
             android:screenOrientation="portrait"/>
+
         <activity
             android:name=".ui.android.view.ViewCoordinatesAct"
             android:screenOrientation="portrait"/>
+
         <activity
             android:theme="@style/AppTheme"
             android:name=".ui.android.view.beziercurve.BezierCurveAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.android.view.viewpager.ViewPagerListAct"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name=".ui.android.view.viewpager.viewpagercard.ViewPagerCardAct"
+            android:screenOrientation="portrait"/>
         <!--第三方框架-->
         <!--图片缓存框架-->
         <activity
@@ -259,6 +285,7 @@
         <activity
             android:name=".ui.java.net.NetAct"
             android:screenOrientation="portrait"/>
+
 
 
         <!--服务-->

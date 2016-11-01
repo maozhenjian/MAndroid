@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
+import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -142,7 +143,7 @@ public class UniversalImageLoaderAct extends BaseActivity<ActUniversalBinding> {
                  * 3.只使用弱引用缓存
                  * WeakMemoryCache（这个类缓存bitmap的总大小没有限制，唯一不足的地方就是不稳定，缓存的图片容易被回收掉）
                  */
-                .memoryCache(new WeakMemoryCache()) //这里可以配置自己的缓存类
+                .memoryCache(new LruMemoryCache(20)) //这里可以配置自己的缓存类
 
                 .memoryCacheSize(2 * 1024 * 1024)   // 内存缓存的最大值
                 .memoryCacheSizePercentage(13) // default

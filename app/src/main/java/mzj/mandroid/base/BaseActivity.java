@@ -17,6 +17,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+
+
 import mzj.mandroid.R;
 
 
@@ -36,6 +38,7 @@ public abstract class BaseActivity<BindingType extends ViewDataBinding> extends 
         super.onCreate(savedInstanceState);
         Log.i("TAG",getClass().getSimpleName());
         mContext = this;
+
         int layoutId = getLayoutId();
         if (layoutId != 0) {
             binding = DataBindingUtil.setContentView(this,layoutId);
@@ -50,7 +53,7 @@ public abstract class BaseActivity<BindingType extends ViewDataBinding> extends 
 //            toolbar.setTitleTextAppearance(this,R.style.TextAppearance.AppCompat.Widget.ActionBar.Title);
 
             toolbarTitle = (TextView) v.findViewById(R.id.toolbar_title);
-            setTitle(getClass().getSimpleName().toString());
+            setTitle(getClass().getSimpleName());
             setSupportActionBar(toolbar);
             if(toolbarTitle != null)
             {

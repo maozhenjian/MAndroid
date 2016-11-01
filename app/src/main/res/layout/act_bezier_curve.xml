@@ -26,43 +26,52 @@
             <!--android:layout_height="wrap_content"-->
             <!--android:id="@+id/measureView" />-->
 
-        <mzj.mandroid.ui.android.view.beziercurve.view.BezierDraw1
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/bezierDraw1" />
+        <!--<mzj.mandroid.ui.android.view.beziercurve.view.BezierDraw1-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:id="@+id/bezierDraw1" />-->
 
         <!--<BezierDraw2-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent" />-->
 
-        <mzj.mandroid.ui.android.view.customview.WaveView
-            android:layout_width="300dp"
-            android:layout_height="300dp" />
+        <!--<mzj.mandroid.ui.android.view.customview.WaveView-->
+            <!--android:layout_width="300dp"-->
+            <!--android:layout_height="300dp" />-->
 
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <CheckBox
-        android:id="@+id/cb1"
-        android:text="二阶控制点"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <CheckBox
-        android:id="@+id/cb2"
-        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
-        android:text="三阶控制点1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+<!--<LinearLayout-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+    <!--<CheckBox-->
+        <!--android:id="@+id/cb1"-->
+        <!--android:text="二阶控制点"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+    <!--<CheckBox-->
+        <!--android:id="@+id/cb2"-->
+        <!--style="@style/Widget.AppCompat.CompoundButton.RadioButton"-->
+        <!--android:text="三阶控制点1"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
 
-    <CheckBox
-        android:id="@+id/cb3"
-        android:text="三阶控制点2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!--<CheckBox-->
+        <!--android:id="@+id/cb3"-->
+        <!--android:text="三阶控制点2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
 
-</LinearLayout>
+<!--</LinearLayout>-->
+
+        <mzj.mandroid.ui.android.view.beziercurve.view.BezierCircleView
+            android:id="@+id/bc"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <mzj.mandroid.ui.android.view.beziercurve.view.BezierPopView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 </layout>

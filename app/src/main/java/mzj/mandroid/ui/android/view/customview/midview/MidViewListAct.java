@@ -27,7 +27,7 @@ public class MidViewListAct extends BaseActivity<CommentTitleListBinding> {
     protected void initData() {
         List<TitleModel.Bean> list= new ArrayList<>();
         list.add(new TitleModel.Bean("加入购物车动画",AddToCartViewAct.class));
-
+        list.add(new TitleModel.Bean("各种加载动画",LoadingAct.class));
 
         adapter = new ListAdapter(this,list);
         binding.Rv.setLayoutManager(new LinearLayoutManager(this));

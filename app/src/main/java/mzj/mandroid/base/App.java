@@ -1,6 +1,7 @@
 package mzj.mandroid.base;
 
 import android.app.Application;
+import android.content.Context;
 import android.graphics.Bitmap;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -13,6 +14,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 
+
 import mzj.mandroid.R;
 
 
@@ -21,6 +23,8 @@ import mzj.mandroid.R;
  */
 public class App extends Application{
     private static App mInstance = null;
+
+
     public static synchronized App getApplication() {
         return mInstance;
     }
@@ -28,9 +32,14 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+
         initImageLoader();
+
     }
-    //配置imageLoader------------------------------------
+    /**
+     *
+     * 配置imageLoader------------------------------------
+     */
     void initImageLoader() {
         //创建默认的ImageLoader配置参数
 //        ImageLoaderConfiguration configuration = ImageLoaderConfiguration
@@ -72,5 +81,7 @@ public class App extends Application{
                         .build();
         ImageLoader.getInstance().init(configuration);
     }
+
+
 
 }

@@ -27,7 +27,7 @@ public class BaseViewListAct extends BaseActivity<CommentTitleListBinding> {
     protected void initData() {
         List<TitleModel.Bean> list= new ArrayList<>();
         list.add(new TitleModel.Bean("代码布局",CodeViewAct.class));
-
+        list.add(new TitleModel.Bean("简单View展示",BaseViewShowAct.class));
 
         adapter = new ListAdapter(this,list);
         binding.Rv.setLayoutManager(new LinearLayoutManager(this));

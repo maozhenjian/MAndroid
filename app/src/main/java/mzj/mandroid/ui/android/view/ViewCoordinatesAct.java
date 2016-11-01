@@ -66,10 +66,10 @@ public class ViewCoordinatesAct extends BaseActivity<ActViewCoordinatesBinding> 
         //  * getTop()	返回View自身顶边到父布局顶边的距离
         //  * getRight()	返回View自身右边到父布局左边的距离
         //  * getBottom()	返回View自身底边到父布局顶边的距离
-        binding.getTop.setText( "返回View自身左边到父布局左边的距离View:getTop()::"+binding.view.getTop());
+        binding.getTop.setText( "返回View自身底边到父布局顶边的距离View:getTop()::"+binding.view.getTop());
         binding.getBottom.setText( "返回View自身顶边到父布局顶边的距离View:getBottom()::"+binding.view.getBottom());
         binding.getRight.setText( "返回View自身右边到父布局左边的距离View:getRight()::"+binding.view.getRight());
-        binding.getLeft.setText( "返回View自身底边到父布局顶边的距离View:getLeft()::"+binding.view.getLeft());
+        binding.getLeft.setText( "返回View自身左边到父布局左边的距离View:getLeft()::"+binding.view.getLeft());
 
 
         binding.getWidth.setText("View:getWidth()::"+binding.view.getWidth());

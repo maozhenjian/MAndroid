@@ -5,21 +5,28 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.SystemClock;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
-import android.view.animation.OvershootInterpolator;
-import android.view.animation.TranslateAnimation;
+
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
+
 import mzj.mandroid.R;
+import mzj.mandroid.base.App;
 import mzj.mandroid.base.BaseActivity;
 import mzj.mandroid.databinding.ActAddCartBinding;
 
@@ -44,11 +51,14 @@ public class AddToCartViewAct extends BaseActivity<ActAddCartBinding> implements
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.add_bt:
+
                 setAnimatorSet();
                 break;
         }
 
     }
+
+
 
 
     private void setAnimatorSet(){
@@ -97,45 +107,54 @@ public class AddToCartViewAct extends BaseActivity<ActAddCartBinding> implements
         viewGroup.addView(animText,myLayoutParams);
 
 
-//        ObjectAnimator anim4=ObjectAnimator.ofFloat(animText, "translationX",0,distenceX);
-//        ObjectAnimator anim5=ObjectAnimator.ofFloat(animText, "translationY", 0,-500,0);
-//        AnimatorSet set = new AnimatorSet();
-//        set.playTogether(anim4, anim5);
-//        set.setDuration(1000);
+        ObjectAnimator anim4=ObjectAnimator.ofFloat(animText, "translationX",0.0f,-500.0f);
+        ObjectAnimator anim5=ObjectAnimator.ofFloat(animText, "translationY", 0.0f,-500.0f,0.0f);
+        anim4.setInterpolator(new LinearInterpolator());
+        anim5.setInterpolator(new BounceInterpolator());
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(anim4, anim5);
+        set.setDuration(1500);
 
-//        set.setInterpolator(new LinearInterpolator());
-//        set.start();
+        set.start();
 
-        AnimationSet set = new AnimationSet(false);
-
-        TranslateAnimation translateAnimation2 = new TranslateAnimation(0.0f,-550.0f,0.0f, -550.0f);
-        translateAnimation2.setInterpolator(new OvershootInterpolator());
-        translateAnimation2.setDuration(1500);
-        set.addAnimation(translateAnimation2);
-
-//        TranslateAnimation translateAnimation1 = new TranslateAnimation(0, -250, 0,-500);
-//        translateAnimation1.setInterpolator(new LinearInterpolator());
-//        translateAnimation1.setDuration(500);
-//        set.addAnimation(translateAnimation1);
-
-        set.setFillAfter(false);
-        animText.startAnimation(set);
-        set.setAnimationListener(new Animation.AnimationListener() {
+        set.addListener(new AnimatorListenerAdapter() {
             @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
                 viewGroup.removeAllViews();
             }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
         });
+
+//        AnimationSet set = new AnimationSet(false);
+//
+//        TranslateAnimation translateAnimation2 = new TranslateAnimation(0,0,0,-500);
+//        translateAnimation2.setInterpolator(new LinearInterpolator());
+//        translateAnimation2.setDuration(1500);
+//        set.addAnimation(translateAnimation2);
+//
+//        TranslateAnimation translateAnimation1 = new TranslateAnimation(0, -1000, 0,0);
+//        translateAnimation1.setInterpolator(new LinearInterpolator());
+//        translateAnimation1.setDuration(3000);
+//        set.addAnimation(translateAnimation1);
+//
+//        set.setFillAfter(false);
+//        animText.startAnimation(set);
+//        set.setAnimationListener(new Animation.AnimationListener() {
+//            @Override
+//            public void onAnimationStart(Animation animation) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//                viewGroup.removeAllViews();
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animation animation) {
+//
+//            }
+//        });
     }
 
 
