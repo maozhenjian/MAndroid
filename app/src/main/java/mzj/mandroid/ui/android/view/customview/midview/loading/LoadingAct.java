@@ -1,4 +1,4 @@
-package mzj.mandroid.ui.android.view.customview.midview;
+package mzj.mandroid.ui.android.view.customview.midview.loading;
 
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;

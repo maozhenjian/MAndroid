@@ -60,13 +60,9 @@ public class BitmapAct extends BaseActivity<ActBitmapBinding> implements View.On
                       binding.sizeTv3.setText("图片修改为RGB_565后大小为："+BitmapUtil.getBitmapSize(bitmap3)/1024+"KB");
                       Log.e("TAG","bitmap"+bitmap);
                       Log.e("TAG","bitmap3"+bitmap3);
-                      /**
-                       .由于前面创建的Bitmap所占用的内存还没有回收，而导致引发OutOfMemory错误，;
-                       所以用下面方法判断是否回收。
-                       */
 
-                      Log.e("TAG","bitmap"+bitmap);
-                      Log.e("TAG","bitmap3"+bitmap3);
+
+
                     break;
             }
         }

@@ -30,10 +30,10 @@ public class SocketTestAct extends BaseActivity<ActSocketBinding> {
             public void run() {
                 try {
                     Log.e("TAG", "run");
-                    Socket socket = new Socket("112.10.195.167", 30000);
+                    Socket socket = new Socket("192.168.11.2", 30000);
                     Log.e("TAG", "socket");
                     //设置10秒之后即认为是超时
-                    socket.setSoTimeout(10000);
+                    socket.setSoTimeout(100000);
                     BufferedReader br = new BufferedReader(new InputStreamReader(
                             socket.getInputStream()));
                     String line = br.readLine();

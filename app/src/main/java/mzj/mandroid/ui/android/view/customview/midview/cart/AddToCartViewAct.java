@@ -1,4 +1,4 @@
-package mzj.mandroid.ui.android.view.customview.midview;
+package mzj.mandroid.ui.android.view.customview.midview.cart;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

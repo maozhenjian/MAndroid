@@ -35,6 +35,7 @@ public class BasisFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("Bitmap相关操作", BitmapAct.class));
         list.add(new TitleModel.Bean("2015Design库组件使用详解", DesignListAct.class));
         list.add(new TitleModel.Bean("6.0运行时权限问题", PermissionAct.class));
+
         initList();
     }
 

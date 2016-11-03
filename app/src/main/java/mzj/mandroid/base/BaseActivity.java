@@ -49,6 +49,7 @@ public abstract class BaseActivity<BindingType extends ViewDataBinding> extends 
         v = findViewById(R.id.toolbar);
         if(v != null)
         {
+
             toolbar = (Toolbar) v;
 //            toolbar.setTitleTextAppearance(this,R.style.TextAppearance.AppCompat.Widget.ActionBar.Title);
 

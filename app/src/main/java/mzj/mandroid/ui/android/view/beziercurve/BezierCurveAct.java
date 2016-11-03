@@ -27,13 +27,13 @@ public class BezierCurveAct extends BaseActivity<ActBezierCurveBinding>{
 //        binding.cb2.setOnClickListener(this);
 //        binding.cb3.setOnClickListener(this);
 
-
-        binding.bc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                binding.bc.startAnim();
-            }
-        });
+//
+//        binding.bc.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                binding.bc.startAnim();
+//            }
+//        });
 
     }
 

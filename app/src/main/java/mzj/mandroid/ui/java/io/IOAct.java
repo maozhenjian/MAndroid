@@ -50,8 +50,9 @@ public class IOAct extends BaseActivity<ActIoBinding> {
            Log.e("TAG","Environment.getExternalStorageDirectory().getAbsolutePath():"+Environment.getExternalStorageDirectory().getAbsolutePath() );
             try {
                 String filePath = this.getFilesDir().getPath()+ "/demo.txt";
+                Log.e("TAG","filePath："+filePath);
 //                File f = new File(filePath);
-                Log.e("TAG","filePath:"+filePath );
+
                 FileWriter fileWriter=new FileWriter(filePath);
             } catch (IOException e) {
                 e.printStackTrace();

@@ -33,6 +33,7 @@ public class ViewFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("坐标", ViewCoordinatesAct.class));
         list.add(new TitleModel.Bean("事件机制", TouchAct.class));
         list.add(new TitleModel.Bean("自定义View", CustomViewListAct.class));
+        list.add(new TitleModel.Bean("Canvas和Paint", ViewPagerListAct.class));
         list.add(new TitleModel.Bean("贝赛尔曲线", BezierCurveAct.class));
         list.add(new TitleModel.Bean("ViewPager的各种使用", ViewPagerListAct.class));
         initList();
