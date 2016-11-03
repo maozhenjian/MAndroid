@@ -12,14 +12,12 @@
         android:orientation="vertical">
         <include layout="@layout/part_title"></include>
 
-
-        <mzj.mandroid.ui.android.view.customview.midview.CustomLoadingView
-
-            android:id="@+id/c_load_view"
+        <Button
+            android:text="(倒计时)CountDownTimer"
+            android:id="@+id/count_down_timer"
+            android:textAllCaps="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
-
 
 
     </LinearLayout>

@@ -142,13 +142,16 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.android.view.customview.midview.AddToCartViewAct"
+            android:name=".ui.android.view.customview.midview.cart.AddToCartViewAct"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.android.view.customview.midview.LoadingAct"
+            android:name=".ui.android.view.customview.midview.loading.LoadingAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.android.view.customview.midview.bounce.BounceAct"
+            android:screenOrientation="portrait"/>
         <!--View::Super-->
         <activity
             android:name=".ui.android.view.customview.superview.SuperViewListAct"
@@ -250,8 +253,10 @@
         <activity
             android:name=".ui.java.annotation.AnnotationAct"
             android:screenOrientation="portrait"/>
-
-
+        <!--常用类-->
+        <activity
+            android:name=".ui.java.common.CommonAct"
+            android:screenOrientation="portrait"/>
         <!--IO-->
         <activity
             android:name=".ui.java.io.FileAct"
