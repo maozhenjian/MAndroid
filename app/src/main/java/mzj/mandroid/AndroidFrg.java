@@ -51,6 +51,8 @@ public class AndroidFrg extends BaseFragment<ActivityHomeBinding> implements Vie
         tabsAdapter.addFragment(new FrameFrg(), "第三方框架");
         binding.vp.setAdapter(tabsAdapter);
         binding.tabLayout.setupWithViewPager(binding.vp);
+
+
     }
 
 

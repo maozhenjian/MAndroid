@@ -1,23 +1,24 @@
 package mzj.mandroid.ui.android.normal.designsupport;
 
-import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
-import android.view.View;
 
-import mzj.mandroid.Adapter.DesignListAdapter;
-import mzj.mandroid.MItemClickListener;
+import java.util.ArrayList;
+import java.util.List;
+
+import mzj.mandroid.Adapter.ListAdapter;
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
 import mzj.mandroid.databinding.ActNetListBinding;
-import mzj.mandroid.model.DesignModel;
+import mzj.mandroid.model.TitleModel;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 
 /**
  * Created by 振坚 on 2016/8/4.
+ *
  */
 public class DesignListAct extends BaseActivity<ActNetListBinding> {
-    DesignListAdapter netListAdapter;
+    ListAdapter adapter;
     @Override
     protected int getLayoutId() {
         return R.layout.act_net_list;
@@ -25,18 +26,14 @@ public class DesignListAct extends BaseActivity<ActNetListBinding> {
 
     @Override
     protected void initData() {
-        netListAdapter = new DesignListAdapter(new DesignModel());
-        binding.Rv.setLayoutManager(new LinearLayoutManager(this));
-        binding.Rv.setAdapter(netListAdapter);
-        binding.Rv.addItemDecoration(new SpacesItemDecoration(10));
-        netListAdapter.setOnItemClickListener(new MItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                if (position == 0) {
-                    startActivity(new Intent(DesignListAct.this, SimpleComponentsAct.class));
-                }
+        List<TitleModel.Bean> list= new ArrayList<>();
+        list.add(new TitleModel.Bean("一般控件",SimpleComponentsAct.class));
+        list.add(new TitleModel.Bean("BottomNavigationView",BottomNavigationViewAct.class));
+        list.add(new TitleModel.Bean("NavigationView",NavigationViewAct.class));
 
-            }
-        });
+        adapter = new ListAdapter(this,list);
+        binding.Rv.setLayoutManager(new LinearLayoutManager(this));
+        binding.Rv.setAdapter(adapter);
+        binding.Rv.addItemDecoration(new SpacesItemDecoration(10));
     }
 }

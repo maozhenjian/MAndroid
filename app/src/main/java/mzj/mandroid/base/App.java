@@ -1,9 +1,13 @@
 package mzj.mandroid.base;
 
 import android.app.Application;
-import android.content.Context;
 import android.graphics.Bitmap;
+import android.text.TextUtils;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.Volley;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -11,9 +15,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.core.decode.BaseImageDecoder;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
-
 
 import mzj.mandroid.R;
 
@@ -23,7 +25,7 @@ import mzj.mandroid.R;
  */
 public class App extends Application{
     private static App mInstance = null;
-
+    private static final String TAG = "App";
 
     public static synchronized App getApplication() {
         return mInstance;
@@ -82,6 +84,18 @@ public class App extends Application{
         ImageLoader.getInstance().init(configuration);
     }
 
+    private RequestQueue mRequestQueue;
+    public <T> void addToRequestQueue(Request<T> req, String tag) {
+        req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        VolleyLog.d("Adding request to queue: %s", req.getUrl());
+        getRequestQueue().add(req);
+    }
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+        }
+        return mRequestQueue;
+    }
 
 
 }

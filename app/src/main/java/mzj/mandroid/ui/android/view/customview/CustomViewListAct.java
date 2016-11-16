@@ -15,6 +15,7 @@ import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
 import mzj.mandroid.ui.android.view.customview.baseview.BaseViewListAct;
 import mzj.mandroid.ui.android.view.customview.midview.MidViewListAct;
 import mzj.mandroid.ui.android.view.customview.superview.SuperViewListAct;
+import mzj.mandroid.ui.android.view.viewpager.ViewPagerListAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**

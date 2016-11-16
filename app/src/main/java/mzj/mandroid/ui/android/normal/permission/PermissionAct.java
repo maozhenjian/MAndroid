@@ -2,6 +2,7 @@ package mzj.mandroid.ui.android.normal.permission;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.support.v4.app.ActivityCompat;
@@ -18,7 +19,7 @@ import mzj.mandroid.utils.ToastUtil;
 
 /**
  * creat by mzj on 2016/10/31 11:32
- *
+ * <p>
  * http://blog.csdn.net/kong_gu_you_lan/article/details/52488097 《Android 6.0运行时权限详解》  容华谢后
  */
 
@@ -38,17 +39,29 @@ public class PermissionAct extends BaseActivity<ActPermissionBinding> {
                 requestPermission();
             }
         });
+
+        binding.easyPermissionBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, EasyPerimissionAct.class));
+            }
+        });
     }
 
     private void requestPermission() {
-//        1>首先判断当前应用有没有CAMERA权限，如果没有则进行申请。
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED) {
+/**
+ * 1 ：检查运行时权限
+ * 首先判断当前应用有没有CAMERA权限，如果没有则进行申请。
+ */
 
-            // 第一次请求权限时，用户如果拒绝，下一次请求shouldShowRequestPermissionRationale() 返回true
-            // 向用户解释为什么需要这个权限
-            Log.e("TAG",ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)+"");
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+/**
+ * 2 ：申请权限
+ *   第一次请求权限时，用户如果拒绝，下一次请求shouldShowRequestPermissionRationale() 返回true
+ *   向用户解释为什么需要这个权限
+ */
+            Log.e("TAG", ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA) + "");
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
-
                 new AlertDialog.Builder(this)
                         .setMessage("申请相机权限")
                         .setPositiveButton("确定", new DialogInterface.OnClickListener() {
@@ -72,7 +85,10 @@ public class PermissionAct extends BaseActivity<ActPermissionBinding> {
         }
     }
 
-    //    此方法是权限申请的回调方法，在此方法中处理权限申请成功或失败后的操作。
+    /**
+     * 3： 接收权限处理结果
+     * 此方法是权限申请的回调方法，在此方法中处理权限申请成功或失败后的操作。
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

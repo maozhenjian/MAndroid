@@ -20,7 +20,6 @@ public class ListAdapter extends BaseRvAdapter {
     public ListAdapter(Context context,List<TitleModel.Bean> list) {
         this.list = list;
         this.context = context;
-
     }
 
     @Override

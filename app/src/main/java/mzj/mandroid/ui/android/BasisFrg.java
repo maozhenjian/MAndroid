@@ -21,6 +21,7 @@ import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**
  * creat by mzj on 2016/9/19 16:39
+ *
  */
 
 public class BasisFrg extends BaseFragment<CommentListBinding> {
@@ -37,6 +38,7 @@ public class BasisFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("6.0运行时权限问题", PermissionAct.class));
 
         initList();
+
     }
 
     @Override

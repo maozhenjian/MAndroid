@@ -107,7 +107,6 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
                 Request request = new Request.Builder()
                         .url("http://publicobject.com/helloworld.txt")
                         .build();
-
                 Response response;
                 try {
                     response = client.newCall(request).execute();
@@ -136,7 +135,7 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
      */
     public void asynchronousGet() throws Exception {
         Request request = new Request.Builder()
-                .url("http://publicobject.com/helloworld.txt")
+                .url("http://artist.beyondin.com/?m=api&a=api&PHPSESSID=4dlres5tnvdrd37q9gfibs2966&api_name=artist.article.getArticleList&appid=1&type=1&is_rec=1&token=4026727a617ce1fbbfbff6302836eef8")
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -150,6 +149,8 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
                 if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
 
                 Headers responseHeaders = response.headers();
+
+                Log.e("TAG","responseHeaders:"+responseHeaders);
 
                 for (int i = 0, size = responseHeaders.size(); i < size; i++) {
                     Log.e(TAG, responseHeaders.name(i) + ": " + responseHeaders.value(i));

@@ -114,8 +114,6 @@ public class ProgressSubscriber<T> extends Subscriber<ResponseBody> implements P
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
 

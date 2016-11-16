@@ -17,6 +17,7 @@ import mzj.mandroid.ui.android.view.TouchAct;
 import mzj.mandroid.ui.android.view.ViewCoordinatesAct;
 import mzj.mandroid.ui.android.view.beziercurve.BezierCurveAct;
 import mzj.mandroid.ui.android.view.customview.CustomViewListAct;
+import mzj.mandroid.ui.android.view.scroller.ScrollerAct;
 import mzj.mandroid.ui.android.view.viewpager.ViewPagerListAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
@@ -34,6 +35,7 @@ public class ViewFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("事件机制", TouchAct.class));
         list.add(new TitleModel.Bean("自定义View", CustomViewListAct.class));
         list.add(new TitleModel.Bean("Canvas和Paint", ViewPagerListAct.class));
+        list.add(new TitleModel.Bean("Scroller", ScrollerAct.class));
         list.add(new TitleModel.Bean("贝赛尔曲线", BezierCurveAct.class));
         list.add(new TitleModel.Bean("ViewPager的各种使用", ViewPagerListAct.class));
         initList();

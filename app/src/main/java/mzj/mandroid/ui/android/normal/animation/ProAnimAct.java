@@ -209,6 +209,7 @@ public class ProAnimAct extends BaseActivity<ActProAnimBinding> implements View.
 
             }
         });
+
         /**
          * 但是也许很多时候我们并不想要监听那么多个事件，可能我只想要监听动画结束这一个事件，那么每次都要将四个接口全部实现一遍就显得非常繁琐。
          * 没关系，为此Android提供了一个适配器类，叫作AnimatorListenerAdapter，使用这个类就可以解决掉实现接口繁琐的问题了

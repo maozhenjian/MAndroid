@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="mzj.mandroid.utils.DataBindingUtil"></import>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"></include>
+
+
+        <View
+            android:background="#e4e"
+            android:id="@+id/oval"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+
+
+        <View
+            android:background="#356"
+            android:layout_marginTop="20dp"
+            android:layout_alignBottom="@id/oval"
+            android:id="@+id/rect"
+            android:layout_width="200dp"
+            android:layout_height="200dp"/>
+    </LinearLayout>
+
+</layout>

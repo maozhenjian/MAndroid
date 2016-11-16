@@ -1,13 +1,10 @@
 package mzj.mandroid.ui.android.network.retrofit;
 
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 
-
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
 
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
@@ -18,15 +15,12 @@ import mzj.mandroid.ui.android.network.retrofit.http.HttpMethods;
 import mzj.mandroid.ui.android.network.retrofit.model.Headlines;
 import mzj.mandroid.ui.android.network.retrofit.model.Weather;
 import mzj.mandroid.ui.android.network.retrofit.param.ArticleParam;
-import mzj.mandroid.ui.android.network.retrofit.param.WorksParam;
 import mzj.mandroid.ui.android.network.retrofit.subscribers.ProgressSubscriber;
 import mzj.mandroid.ui.android.network.retrofit.subscribers.SubscriberOnNextListener;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-
 import okhttp3.Request;
 import okhttp3.logging.HttpLoggingInterceptor;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -95,8 +89,6 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
         call.enqueue(new Callback<Weather>() {
             @Override
             public void onResponse(Call<Weather> call, Response<Weather> response) {
-
-
 //                if (response.body().result.data.size() > positon) {
 //                    binding.simpleBt.setText(response.body().result.data.get(positon).title);
 //                    positon++;
@@ -104,8 +96,6 @@ public class RetrofitAct extends BaseActivity<ActRetrofitBinding> implements Vie
 //                    positon = 0;
 //                    return;
 //                }
-
-
                 Log.e("TAG", response.body().data.article_list.get(0).base_pic);//主线程
                 Log.i("TAG", response.raw().toString()); //URL
                 Log.e("TAG", "当前线程:" + Thread.currentThread().getName());//主线程

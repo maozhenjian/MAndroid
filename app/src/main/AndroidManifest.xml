@@ -47,6 +47,9 @@
             android:name=".ui.android.normal.animation.TweenAnimAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.android.normal.animation.MDAnimAct"
+            android:screenOrientation="portrait"/>
 
         <!--DataBinding相关-->
         <activity
@@ -102,6 +105,9 @@
             android:name=".ui.android.rx.RxListAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.android.rx.rxbus.RxBusAct"
+            android:screenOrientation="portrait"/>
 
         <!--5.0Design库-->
         <activity
@@ -111,10 +117,22 @@
             android:name=".ui.android.normal.designsupport.SimpleComponentsAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.android.normal.designsupport.BottomNavigationViewAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.normal.designsupport.NavigationViewAct"
+            android:screenOrientation="portrait"/>
         <!--运行时权限问题-->
         <activity
             android:name=".ui.android.normal.permission.PermissionAct"
             android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.normal.permission.EasyPerimissionAct"
+            android:screenOrientation="portrait"/>
+
         <!--View-->
         <!--<activity-->
             <!--android:name=".ui.android.view.ViewListAct"-->
@@ -152,6 +170,7 @@
         <activity
             android:name=".ui.android.view.customview.midview.bounce.BounceAct"
             android:screenOrientation="portrait"/>
+
         <!--View::Super-->
         <activity
             android:name=".ui.android.view.customview.superview.SuperViewListAct"
@@ -159,7 +178,9 @@
 
 
 
-
+        <activity
+            android:name=".ui.android.view.scroller.ScrollerAct"
+            android:screenOrientation="portrait"/>
 
 
         <activity

@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.android.volley.AuthFailureError;
@@ -14,7 +15,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -53,6 +53,14 @@ public class VolleyFirstAct extends BaseActivity<ActVolleyFirstBinding> {
 
     @Override
     protected void initData() {
+
+        binding.bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getArtIcleList();
+            }
+        });
+
         /**
          获取到一个RequestQueue对象,注意这里拿到的RequestQueue是一个请求队列对象，它可以缓存所有的HTTP请求
          基本上在每一个需要和网络交互的Activity中创建一个RequestQueue对象就足够了。
@@ -289,4 +297,27 @@ public class VolleyFirstAct extends BaseActivity<ActVolleyFirstBinding> {
         }
 
     }
+
+    private long startTime;
+    private void getArtIcleList() {
+        GetArticleListParam getArticleListParam = new GetArticleListParam();
+        getArticleListParam.type = "1";
+        getArticleListParam.is_rec = "1";
+        getArticleListParam.is_relation = "1";
+        startTime=System.currentTimeMillis();
+        new GetArticleListApi(getArticleListParam, this, new GetArticleListApi.ResponseListener() {
+            @Override
+            public void onSuccess(JSONObject response) {
+                Log.e("TAG", "time:" + (System.currentTimeMillis()-startTime));
+                Log.e("TAG", "response:" + response);
+
+            }
+
+            @Override
+            public void onFail(JSONObject response) {
+
+            }
+        }).call();
+    }
+
 }

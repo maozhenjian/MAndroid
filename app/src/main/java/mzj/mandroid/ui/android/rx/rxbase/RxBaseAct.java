@@ -6,7 +6,6 @@ import android.view.View;
 
 import com.bumptech.glide.Glide;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -16,7 +15,6 @@ import mzj.mandroid.base.BaseActivity;
 import mzj.mandroid.databinding.ActRxBaseBinding;
 import rx.Observable;
 import rx.Observer;
-import rx.Scheduler;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
@@ -51,6 +49,8 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
         binding.schedulerBt.setOnClickListener(this);
         binding.mapBt.setOnClickListener(this);
         binding.flatmapBt.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -135,7 +135,6 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
         };
 
         observable.subscribe(subscriber);
-//        observable.subscribe(subscriber);
     }
 
 

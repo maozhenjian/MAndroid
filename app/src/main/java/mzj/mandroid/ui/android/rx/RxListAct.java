@@ -12,11 +12,13 @@ import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
 import mzj.mandroid.databinding.ActNetListBinding;
 import mzj.mandroid.model.TitleModel;
+import mzj.mandroid.ui.android.rx.rxbus.RxBusAct;
 import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**
- * Created by 振坚 on 2016/8/4.
+ * Created by mzj on 2016/8/4.
+ *
  */
 public class RxListAct extends BaseActivity<ActNetListBinding> {
     ListAdapter adapter;
@@ -29,8 +31,8 @@ public class RxListAct extends BaseActivity<ActNetListBinding> {
     protected void initData() {
         List<TitleModel.Bean> list= new ArrayList<>();
         list.add(new TitleModel.Bean("RxJava基本使用方法",RxCacheAct.class));
-        list.add(new TitleModel.Bean("RxJava基本使用方法",RxCacheAct.class));
-        list.add(new TitleModel.Bean("RxJava基本使用方法",RxCacheAct.class));
+        list.add(new TitleModel.Bean("RxCache",RxCacheAct.class));
+        list.add(new TitleModel.Bean("RxBus",RxBusAct.class));
         adapter = new ListAdapter(this,list);
         binding.Rv.setLayoutManager(new LinearLayoutManager(this));
         binding.Rv.setAdapter(adapter);

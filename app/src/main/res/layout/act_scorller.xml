@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="mzj.mandroid.utils.DataBindingUtil"/>
+    </data>
+    <LinearLayout
+        android:background="@color/colorAccent"
+        android:id="@+id/root_LL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"/>
+
+        <LinearLayout
+            android:background="@color/blue"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:textAllCaps="false"
+                android:id="@+id/scroll_to_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="scrollTo"/>
+
+            <Button
+                android:textAllCaps="false"
+            android:id="@+id/scroll_by_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="scrollBy"/>
+
+
+            <!--<mzj.mandroid.ui.android.view.scroller.MSLV-->
+                <!--android:background="@color/splash_green"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<Button-->
+                    <!--android:textAllCaps="false"-->
+                    <!--android:layout_marginTop="100dp"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="startScroll"/>-->
+
+            <!--</mzj.mandroid.ui.android.view.scroller.MSLV>-->
+        <!--<mzj.mandroid.ui.android.view.scroller.ScrollerLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+
+
+
+
+        <!--</mzj.mandroid.ui.android.view.scroller.ScrollerLayout>-->
+
+            <mzj.mandroid.ui.android.view.scroller.ScrollLayout
+                android:id="@+id/content_scroll_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_blue_light"
+                android:gravity="center"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+          >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="按住我拖动试试" />
+            </mzj.mandroid.ui.android.view.scroller.ScrollLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

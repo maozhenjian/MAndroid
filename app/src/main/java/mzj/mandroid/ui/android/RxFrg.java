@@ -2,8 +2,6 @@ package mzj.mandroid.ui.android;
 
 import android.support.v7.widget.LinearLayoutManager;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +10,8 @@ import mzj.mandroid.R;
 import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.CommentListBinding;
 import mzj.mandroid.model.TitleModel;
-import mzj.mandroid.ui.android.rx.RxListAct;
 import mzj.mandroid.ui.android.rx.rxbase.RxBaseAct;
+import mzj.mandroid.ui.android.rx.rxbus.RxBusAct;
 import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
@@ -28,7 +26,7 @@ public class RxFrg extends BaseFragment<CommentListBinding> {
     public void initData() {
         list=new ArrayList<>();
         list.add(new TitleModel.Bean("RxJava基础知识", RxBaseAct.class));
-        list.add(new TitleModel.Bean("RxBus", RxListAct.class));
+        list.add(new TitleModel.Bean("RxBus", RxBusAct.class));
         list.add(new TitleModel.Bean("Rx缓存", RxCacheAct.class));
         initList();
     }

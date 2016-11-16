@@ -2,39 +2,22 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
 
         <import type="mzj.mandroid.utils.DataBindingUtil"></import>
     </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <include layout="@layout/part_title"></include>
 
-        <ImageView
-            android:id="@+id/imageIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/networkImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
         <Button
-            android:text="Volley请求"
-            android:id="@+id/bt"
+            android:id="@+id/permission_bt"
+            android:text="申请权限"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
 
     </LinearLayout>
 

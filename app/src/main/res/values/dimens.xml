@@ -21,4 +21,7 @@
     <dimen name="toolbar_title_size">21dp</dimen>
     <dimen name="header_height">250dp</dimen>
     <dimen name="scroll_item_top_pad">7dp</dimen>
+
+    <dimen name="scroll_h">-50dp</dimen>
+    <dimen name="scroll_v">-50dp</dimen>
 </resources>
