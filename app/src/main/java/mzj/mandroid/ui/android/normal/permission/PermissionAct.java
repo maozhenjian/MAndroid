@@ -14,7 +14,6 @@ import android.view.View;
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
 import mzj.mandroid.databinding.ActPermissionBinding;
-import mzj.mandroid.databinding.CommentTitleListBinding;
 import mzj.mandroid.utils.ToastUtil;
 
 /**
@@ -76,8 +75,8 @@ public class PermissionAct extends BaseActivity<ActPermissionBinding> {
 
             } else {
                 //申请相机权限
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST_CODE);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST_CODE);
+
             }
         } else {
             binding.permissionTv.setTextColor(Color.GREEN);

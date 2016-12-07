@@ -1,15 +1,17 @@
 package mzj.mandroid.ui.android.network.handler;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.lang.ref.WeakReference;
 
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
@@ -52,25 +54,50 @@ public class HandlerAct extends BaseActivity<ActHandlerBinding> implements View.
         binding.handlerThread.setOnClickListener(this);
     }
 
+
     /**
      * 对发送过来的Message进行统一的管理
      */
-    private Handler handler = new Handler() {
+    private MHandler handler=new MHandler(this);
 
+    private static class MHandler extends Handler {
+        private WeakReference<Context> reference;
+
+         MHandler(Context context) {
+            this.reference =new WeakReference<>(context);
+        }
+
+        @Override
         public void handleMessage(Message msg) {
+             HandlerAct activity = (HandlerAct)reference.get();
+
             switch (msg.what) {
                 case 0:
-                    binding.messageTv.setText(msg.obj + "");
+                    activity.  binding.messageTv.setText(msg.obj + "");
                     break;
                 case 1:
                     Log.e("TAG", "probar：" + msg.arg1);
                     Log.e("TAG", "probar:" + Thread.currentThread().getName());
-                    binding.probar.setProgress(msg.arg1);
+                    activity. binding.probar.setProgress(msg.arg1);
                     break;
             }
         }
+    }
 
-    };
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        移除消息队列中的消息
+        handler.removeCallbacksAndMessages(null);
+    }
+
+//    private Handler handler = new Handler() {
+//
+//        public void handleMessage(Message msg) {
+//
+//        }
+//
+//    };
 
     Runnable updateThread = new Runnable() {
         int i=0;

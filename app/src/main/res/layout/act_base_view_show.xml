@@ -1,24 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+     >
     <data>
 
         <import type="mzj.mandroid.utils.DataBindingUtil"/>
     </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-        <include layout="@layout/part_title"></include>
+        <include layout="@layout/part_title"/>
 
-        <mzj.mandroid.ui.android.view.customview.baseview.view.MagicCircleView
-            android:layout_marginTop="100dp"
-            android:id="@+id/circle_view"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+        <!--<mzj.mandroid.ui.android.view.customview.baseview.view.MagicCircleView-->
+            <!--android:id="@+id/circle_view"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp" />-->
+        <mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView
+            android:id="@+id/id_qiqiu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@mipmap/bg_home" >
+        </mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView>
 
+        <mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/bg_home"  >
+        </mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView>
+
+        <mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@mipmap/bg_home"  >
+        </mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView>
+
+        <mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView
+            android:id="@+id/id_meinv"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/bg_home"
+            app:borderRadius="20dp"
+            app:type="round" >
+        </mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView>
+
+        <mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@mipmap/bg_home"
+            app:borderRadius="40dp"
+            app:type="round" >
+        </mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView>
+
+        <mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@mipmap/bg_home"
+            app:borderRadius="60dp"
+            app:type="round" >
+        </mzj.mandroid.ui.android.view.customview.baseview.view.RoundImageView>
 
     </LinearLayout>
-
+    </ScrollView>
 </layout>

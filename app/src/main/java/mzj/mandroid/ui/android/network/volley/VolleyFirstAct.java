@@ -65,8 +65,7 @@ public class VolleyFirstAct extends BaseActivity<ActVolleyFirstBinding> {
          获取到一个RequestQueue对象,注意这里拿到的RequestQueue是一个请求队列对象，它可以缓存所有的HTTP请求
          基本上在每一个需要和网络交互的Activity中创建一个RequestQueue对象就足够了。
          */
-        RequestQueue mQueue = Volley.newRequestQueue(this);
-
+         RequestQueue mQueue = Volley.newRequestQueue(this);
     /*
         发出发出一条HTTP请求"Get"，创建一个StringRequest对象
         第一个参数就是目标服务器的URL地址，第二个参数是服务器响应成功的回调，第三个参数是服务器响应失败的回调
@@ -101,7 +100,7 @@ public class VolleyFirstAct extends BaseActivity<ActVolleyFirstBinding> {
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> map = new HashMap<String, String>();
+                Map<String, String> map = new HashMap<>();
                 map.put("params1", "value1");
                 map.put("params2", "value2");
                 return map;

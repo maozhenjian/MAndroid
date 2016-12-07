@@ -21,6 +21,7 @@ import mzj.mandroid.ui.android.BasisFrg;
 import mzj.mandroid.ui.android.FrameFrg;
 import mzj.mandroid.ui.android.NetFrg;
 import mzj.mandroid.ui.android.RxFrg;
+import mzj.mandroid.ui.android.SystemFrg;
 import mzj.mandroid.ui.android.ViewFrg;
 import mzj.mandroid.wiget.NetworkImageHolderView;
 
@@ -49,6 +50,7 @@ public class AndroidFrg extends BaseFragment<ActivityHomeBinding> implements Vie
         tabsAdapter.addFragment(new NetFrg(), "网络请求");
         tabsAdapter.addFragment(new ViewFrg(), "自定义View");
         tabsAdapter.addFragment(new FrameFrg(), "第三方框架");
+        tabsAdapter.addFragment(new SystemFrg(), "系统相关操作");
         binding.vp.setAdapter(tabsAdapter);
         binding.tabLayout.setupWithViewPager(binding.vp);
 

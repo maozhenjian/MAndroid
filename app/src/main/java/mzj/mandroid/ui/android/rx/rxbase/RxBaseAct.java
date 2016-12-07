@@ -78,6 +78,7 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
      * create() 方法是 RxJava 最基本的创造事件序列的方法。
      */
     private void baseAction(){
+
         // 被观察者
         Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
             @Override
@@ -117,6 +118,7 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
                 Log.v("TAG", "onStart");
                 super.onStart();
             }
+
             @Override
             public void onNext(String s) {
                 Log.d("TAG", "" + s);
@@ -204,14 +206,15 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
         Observable.create(new Observable.OnSubscribe<Integer>() {
             @Override
             public void call(Subscriber<? super Integer> subscriber) {
-                subscriber.onNext(1);
+                               subscriber.onNext(1);
                 subscriber.onNext(2);
                 subscriber.onNext(3);
                 subscriber.onNext(4);
+//                子线程
                 Log.i("TAG", "Observable运行的线程：" + Thread.currentThread().getName());
 
             }
-        }).subscribeOn(Schedulers.io()) // 指定 subscribe() 发生在 IO 线程
+        }).subscribeOn(Schedulers.io()) // 指定 OnSubscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程
                 .subscribe(new Action1<Integer>() {
                     @Override
@@ -296,7 +299,6 @@ public class RxBaseAct extends BaseActivity<ActRxBaseBinding> implements View.On
                 .flatMap(new Func1<Student, Observable<String>>() {
                     @Override
                     public Observable<String> call(Student student) {
-
                         return Observable.from(student.getCourse());
                     }
                 })

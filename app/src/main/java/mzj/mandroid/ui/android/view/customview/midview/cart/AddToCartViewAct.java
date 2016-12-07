@@ -73,9 +73,6 @@ public class AddToCartViewAct extends BaseActivity<ActAddCartBinding> implements
         LinearLayout.LayoutParams myLayoutParams = new LinearLayout.LayoutParams(50, 50);
 
 
-
-
-
        /* 起点 */
         int[] startXY = new int[2];
         binding.addBt.getLocationInWindow(startXY);

@@ -1,23 +1,28 @@
 package mzj.mandroid.ui.android.view.customview.baseview;
 
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import mzj.mandroid.Adapter.ListAdapter;
+import mzj.mandroid.Adapter.FrgListAdapter;
+import mzj.mandroid.MItemClickListener;
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
+import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.CommentTitleListBinding;
-import mzj.mandroid.model.TitleModel;
-import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
-import mzj.mandroid.wiget.SpacesItemDecoration;
+import mzj.mandroid.model.FrgsModel;
+import mzj.mandroid.ui.android.view.customview.baseview.frgment.WaveViewFrg;
+import mzj.mandroid.utils.FragmentUtil;
 
 /**
  * Created by 振坚 on 2016/8/4.
  */
 public class BaseViewListAct extends BaseActivity<CommentTitleListBinding> {
-    ListAdapter adapter;
+    FrgListAdapter adapter;
+    BaseFragment mcurrentFrg;
     @Override
     protected int getLayoutId() {
         return R.layout.comment_title_list;
@@ -25,14 +30,29 @@ public class BaseViewListAct extends BaseActivity<CommentTitleListBinding> {
 
     @Override
     protected void initData() {
-        List<TitleModel.Bean> list= new ArrayList<>();
-        list.add(new TitleModel.Bean("代码布局",CodeViewAct.class));
-        list.add(new TitleModel.Bean("简单View展示",BaseViewShowAct.class));
 
-        adapter = new ListAdapter(this,list);
+        final List<FrgsModel.Bean> list= new ArrayList<>();
+        list.add(new FrgsModel.Bean("波纹扩散",new WaveViewFrg()));
+//        list.add(new TitleModel.Bean("简单View展示",BaseViewShowAct.class));
+//        list.add(new TitleModel.Bean("圆角图",BaseViewShowAct.class));
+
+//        list.add(new TitleModel.Bean("圆角图",WaveView.class));
+        adapter = new FrgListAdapter(this,list);
         binding.Rv.setLayoutManager(new LinearLayoutManager(this));
         binding.Rv.setAdapter(adapter);
-        binding.Rv.addItemDecoration(new SpacesItemDecoration(10));
+
+        adapter.setOnItemClickListener(new MItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Log.e("TAG","onItemClick");
+                FragmentUtil.switchFragment(getSupportFragmentManager(),mcurrentFrg,list.get(position).frg,R.id.root_root,list.get(position).frg.getClass().getName());
+                mcurrentFrg=list.get(position).frg;
+            }
+        });
+
 
     }
+
+
+
 }

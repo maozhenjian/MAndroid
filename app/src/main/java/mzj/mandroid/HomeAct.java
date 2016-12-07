@@ -27,6 +27,7 @@ public class HomeAct extends BaseActivity<ActMainBinding> {
     private static int currentindex = 0;
     private AndroidFrg androidFrg;
     private JAVAFrg javaFrg;
+
     @Override
     protected int getLayoutId() {
         return R.layout.act_main;
@@ -39,15 +40,14 @@ public class HomeAct extends BaseActivity<ActMainBinding> {
 
     }
 
-    public void  initFrg(){
-        androidFrg=new AndroidFrg();
-        javaFrg=new JAVAFrg();
+    public void initFrg() {
+        androidFrg = new AndroidFrg();
+        javaFrg = new JAVAFrg();
         listFra.add(androidFrg);
         listFra.add(javaFrg);
     }
 
     private void setupView() {
-
         setSupportActionBar(toolbar);
         drawerToggle = new ActionBarDrawerToggle(this, binding.drawerLayout, toolbar, 0, 0);
         binding.drawerLayout.addDrawerListener(drawerToggle);
@@ -59,7 +59,7 @@ public class HomeAct extends BaseActivity<ActMainBinding> {
             }
         });
         selectDrawerItem(binding.navigationView.getMenu().getItem(0));
-        fragmentManager.beginTransaction().add(R.id.content_frame,listFra.get(0)).commit();
+        fragmentManager.beginTransaction().add(R.id.content_frame, listFra.get(0)).commit();
     }
 
 
@@ -67,12 +67,12 @@ public class HomeAct extends BaseActivity<ActMainBinding> {
         boolean specialToolbarBehaviour = false;
         switch (menuItem.getItemId()) {
             case R.id.menu_home:
-                FragmentUtil.switchFragment(fragmentManager,R.id.content_frame, listFra.get(currentindex), listFra.get(0));
-                currentindex=0;
+                FragmentUtil.switchFragment(fragmentManager, R.id.content_frame, listFra.get(currentindex), listFra.get(0));
+                currentindex = 0;
                 break;
             case R.id.menu_order:
-                FragmentUtil.switchFragment(fragmentManager,R.id.content_frame, listFra.get(currentindex), listFra.get(1));
-                currentindex=1;
+                FragmentUtil.switchFragment(fragmentManager, R.id.content_frame, listFra.get(currentindex), listFra.get(1));
+                currentindex = 1;
                 break;
 
             default:
@@ -94,8 +94,5 @@ public class HomeAct extends BaseActivity<ActMainBinding> {
             }
         }
     }
-
-
-
 
 }

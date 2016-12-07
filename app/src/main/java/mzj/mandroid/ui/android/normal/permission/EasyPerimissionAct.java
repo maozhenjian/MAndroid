@@ -1,6 +1,7 @@
 package mzj.mandroid.ui.android.normal.permission;
 
 import android.Manifest;
+import android.support.annotation.Nullable;
 import android.view.View;
 
 import java.util.List;
@@ -56,7 +57,7 @@ public class EasyPerimissionAct extends BaseActivity<ActEasyPermissionBinding> i
      * 3 实现EasyPermissions.PermissionCallbacks接口，直接处理权限是否成功申请
      */
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @Nullable String[] permissions,@Nullable int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         // Forward results to EasyPermissions
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);

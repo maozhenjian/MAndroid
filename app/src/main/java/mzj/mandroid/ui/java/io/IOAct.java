@@ -3,7 +3,8 @@ package mzj.mandroid.ui.java.io;
 import android.os.Environment;
 import android.util.Log;
 
-import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +14,6 @@ import java.io.Writer;
 
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
-import mzj.mandroid.databinding.ActFileBinding;
 import mzj.mandroid.databinding.ActIoBinding;
 
 /**
@@ -44,16 +44,35 @@ public class IOAct extends BaseActivity<ActIoBinding> {
         getPath();
     }
 
-    private void getPath(){
+    private void getPath() {
 
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-           Log.e("TAG","Environment.getExternalStorageDirectory().getAbsolutePath():"+Environment.getExternalStorageDirectory().getAbsolutePath() );
+            Log.e("TAG", "Environment.getExternalStorageDirectory().getAbsolutePath():" + Environment.getExternalStorageDirectory().getAbsolutePath());
             try {
-                String filePath = this.getFilesDir().getPath()+ "/demo.txt";
-                Log.e("TAG","filePath："+filePath);
+                String filePath = getFilesDir().getPath() + "/demo.txt";
+                Log.e("TAG", "filePath：" + filePath);
 //                File f = new File(filePath);
 
-                FileWriter fileWriter=new FileWriter(filePath);
+                FileWriter fileWriter = new FileWriter(filePath);
+                fileWriter.write("maommadcsjcbsjdjbcskdj");
+                fileWriter.close();
+
+
+
+                FileReader fr =  new FileReader (filePath);
+
+                BufferedReader br = new BufferedReader (fr);
+
+                String s;
+
+                while ((s = br.readLine() )!=null) {
+                    Log.e("TAG",s);
+                    binding.tv.setText(s);
+
+                }
+
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -61,5 +80,7 @@ public class IOAct extends BaseActivity<ActIoBinding> {
         } else {
             Log.e("change user icon ==>>", "there is not sdcard!");
         }
+
+
     }
 }

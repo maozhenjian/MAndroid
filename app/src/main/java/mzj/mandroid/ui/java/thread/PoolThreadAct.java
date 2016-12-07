@@ -2,7 +2,6 @@ package mzj.mandroid.ui.java.thread;
 
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -29,6 +28,9 @@ public class PoolThreadAct extends BaseActivity<ActPoolThreadBinding> implements
         binding.newCachedThreadPool.setOnClickListener(this);
         binding.newFixedThreadPool.setOnClickListener(this);
         binding.newSingleThreadExecutor.setOnClickListener(this);
+
+
+
 
     }
     @Override
@@ -67,6 +69,7 @@ public class PoolThreadAct extends BaseActivity<ActPoolThreadBinding> implements
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         for (int i = 0; i < 10; i++) {
             final int index = i;
+
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -87,8 +90,8 @@ public class PoolThreadAct extends BaseActivity<ActPoolThreadBinding> implements
 
     /**
      * newFixedThreadPool
-     *     创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
-     *    因为线程池大小为3，每个任务输出index后sleep 2秒，所以每两秒打印3个数字。
+     *   创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。
+     *   因为线程池大小为3，每个任务输出index后sleep 2秒，所以每两秒打印3个数字。
      *   定长线程池的大小最好根据系统资源进行设置。如Runtime.getRuntime().availableProcessors()。
      */
 

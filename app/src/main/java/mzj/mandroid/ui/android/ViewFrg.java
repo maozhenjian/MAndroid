@@ -10,11 +10,9 @@ import mzj.mandroid.R;
 import mzj.mandroid.base.BaseFragment;
 import mzj.mandroid.databinding.CommentListBinding;
 import mzj.mandroid.model.TitleModel;
-import mzj.mandroid.ui.android.rx.RxListAct;
-import mzj.mandroid.ui.android.rx.rxbase.RxBaseAct;
-import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
 import mzj.mandroid.ui.android.view.TouchAct;
 import mzj.mandroid.ui.android.view.ViewCoordinatesAct;
+import mzj.mandroid.wiget.view.ViewLifeAct;
 import mzj.mandroid.ui.android.view.beziercurve.BezierCurveAct;
 import mzj.mandroid.ui.android.view.customview.CustomViewListAct;
 import mzj.mandroid.ui.android.view.scroller.ScrollerAct;
@@ -38,6 +36,7 @@ public class ViewFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("Scroller", ScrollerAct.class));
         list.add(new TitleModel.Bean("贝赛尔曲线", BezierCurveAct.class));
         list.add(new TitleModel.Bean("ViewPager的各种使用", ViewPagerListAct.class));
+        list.add(new TitleModel.Bean("View的生命周期", ViewLifeAct.class));
         initList();
     }
 

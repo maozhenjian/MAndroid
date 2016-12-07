@@ -1,15 +1,7 @@
 package mzj.mandroid.ui.android.normal.bitmap;
 
-import android.databinding.tool.util.L;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -163,30 +155,6 @@ public class BitmapAct extends BaseActivity<ActBitmapBinding> implements View.On
     }
 
 
-
-
-    //设置图片圆角，返回设置后的BitMap
-    public  Bitmap toRoundCorner(Bitmap bitmap, int pixels) {
-        Bitmap roundCornerBitmap = Bitmap.createBitmap(bitmap.getWidth(),
-                bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-
-        Canvas canvas = new Canvas(roundCornerBitmap);
-        Paint paint = new Paint();
-        paint.setColor(Color.BLUE);
-        // 防止锯齿
-        paint.setAntiAlias(true);
-        Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-        RectF rectF = new RectF(rect);
-        float roundPx = pixels;
-        // 相当于清屏
-        canvas.drawARGB(0, 0, 0, 0);
-        // 先画了一个带圆角的矩形
-        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SCREEN));
-        // 再把原来的bitmap画到现在的bitmap！！！注意这个理解
-        canvas.drawBitmap(bitmap, rect, rect, paint);
-        return roundCornerBitmap;
-    }
 
 //    /**
 //     *

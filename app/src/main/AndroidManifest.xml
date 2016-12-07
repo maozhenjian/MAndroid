@@ -176,6 +176,9 @@
             android:name=".ui.android.view.customview.superview.SuperViewListAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".wiget.view.ViewLifeAct"
+            android:screenOrientation="portrait"/>
 
 
         <activity
@@ -218,6 +221,10 @@
 
         <activity
             android:name=".ui.android.frame.buffknife.ButterKnifeAct"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".ui.android.system.pic.PicAct"
             android:screenOrientation="portrait"/>
 
         <!--JAVA-->
@@ -312,8 +319,14 @@
             android:name=".ui.java.net.NetAct"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".ui.java.net.udp.UDPAct"
+            android:screenOrientation="portrait"/>
 
 
+        <activity
+            android:name=".ui.java.reflect.ReflectAct"
+            android:screenOrientation="portrait"/>
         <!--服务-->
         <service android:name=".service.MusicService"/>
     </application>

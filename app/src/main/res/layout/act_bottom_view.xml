@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:design="http://schema.android.com/apk/res/android.support.design"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="mzj.mandroid.utils.DataBindingUtil"></import>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/part_title"></include>
+
+
+        <TextView
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Hello World!"
+            android:textSize="36sp"/>
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:itemBackground="@android:color/holo_blue_bright"
+            app:itemIconTint="@android:color/holo_red_dark"
+            app:itemTextColor="@android:color/black"
+            app:menu="@menu/menu_bottom_navigation_items"/>
+
+    </LinearLayout>
+
+</layout>

@@ -18,6 +18,7 @@ import mzj.mandroid.ui.java.common.CommonAct;
 import mzj.mandroid.ui.java.design.DesignListAct;
 import mzj.mandroid.ui.java.io.IOAct;
 import mzj.mandroid.ui.java.net.NetAct;
+import mzj.mandroid.ui.java.reflect.ReflectAct;
 import mzj.mandroid.ui.java.thread.BaseThreadAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
@@ -36,10 +37,11 @@ public class JavaBasisFrg extends BaseFragment<CommentListBinding> {
         list.add(new TitleModel.Bean("算法", CalculateListAct.class));
         list.add(new TitleModel.Bean("集合", CollectionListAct.class));
         list.add(new TitleModel.Bean("线程", BaseThreadAct.class));
-        list.add(new TitleModel.Bean("反射", AbstractAct.class));
+        list.add(new TitleModel.Bean("反射", ReflectAct.class));
         list.add(new TitleModel.Bean("注解", AnnotationAct.class));
         list.add(new TitleModel.Bean("文件流", IOAct.class));
         list.add(new TitleModel.Bean("网络", NetAct.class));
+        list.add(new TitleModel.Bean("正则表达式", NetAct.class));
         list.add(new TitleModel.Bean("JAVA常用类", CommonAct.class));
         initList();
     }

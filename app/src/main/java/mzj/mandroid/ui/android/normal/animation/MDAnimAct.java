@@ -58,7 +58,8 @@ public class MDAnimAct extends BaseActivity<ActMdAnimBinding> implements View.On
                         0,
                         0,
                         0,
-                        (float) Math.hypot(binding.rect.getWidth(), binding.rect.getHeight()));
+                        (float) Math.hypot(binding.rect.getWidth(),
+                                binding.rect.getHeight()));
                 animator2.setInterpolator(new AccelerateInterpolator());
                 animator2.setDuration(2000);
                 animator2.start();

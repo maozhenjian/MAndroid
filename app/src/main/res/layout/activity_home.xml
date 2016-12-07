@@ -8,7 +8,7 @@
 
         <variable
             name="act"
-            type="mzj.mandroid.AndroidFrg"></variable>
+            type="mzj.mandroid.AndroidFrg"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -43,7 +43,7 @@
                     android:background="#8252"
                     android:id="@+id/convenientBanner"
                     app:canLoop="true"
-                   ></com.bigkoo.convenientbanner.ConvenientBanner>
+                 />
 
                 <android.support.v7.widget.Toolbar
                     android:alpha="0.8"
@@ -52,7 +52,7 @@
                     android:layout_height="?attr/actionBarSize"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     app:layout_collapseMode="pin"
-                    ></android.support.v7.widget.Toolbar>
+                    />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 

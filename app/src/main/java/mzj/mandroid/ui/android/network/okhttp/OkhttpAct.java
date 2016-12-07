@@ -101,6 +101,8 @@ public class OkhttpAct extends BaseActivity<ActOkhttpBinding> implements View.On
      * @throws Exception
      */
     public void run() throws Exception {
+
+
         new Thread(new Runnable() {
             @Override
             public void run() {

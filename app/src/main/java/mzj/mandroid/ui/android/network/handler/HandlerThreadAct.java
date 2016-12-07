@@ -70,8 +70,6 @@ public class HandlerThreadAct extends BaseActivity<ActHandlerThreadBinding> {
                 }
             }
         };
-
-
     }
 
     /**

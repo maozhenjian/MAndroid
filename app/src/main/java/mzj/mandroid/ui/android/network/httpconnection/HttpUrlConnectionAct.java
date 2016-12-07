@@ -1,11 +1,8 @@
 package mzj.mandroid.ui.android.network.httpconnection;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.View;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -43,7 +40,7 @@ public class HttpUrlConnectionAct extends BaseActivity<ActHttpurlconnetionBindin
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.e("HttpURLConnection", Thread.currentThread().getName().toString());
+                Log.e("HttpURLConnection", Thread.currentThread().getName());
                 HttpURLConnection connection = null;
                 try {
                     URL url = new URL("http://fanyi.youdao.com/openapi.do?keyfrom=httpgetmysddfr&key=1415591803&type=data&doctype=json&version=1.1&q=man");

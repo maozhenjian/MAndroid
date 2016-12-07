@@ -6,15 +6,12 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import mzj.mandroid.Adapter.ListAdapter;
 import mzj.mandroid.R;
 import mzj.mandroid.base.BaseActivity;
 import mzj.mandroid.databinding.ActCollectionListBinding;
-import mzj.mandroid.databinding.CommentTitleListBinding;
 import mzj.mandroid.model.TitleModel;
-import mzj.mandroid.ui.android.rx.rxcache.RxCacheAct;
 import mzj.mandroid.wiget.SpacesItemDecoration;
 
 /**
@@ -32,6 +29,7 @@ public class CollectionListAct extends BaseActivity<ActCollectionListBinding> {
 
     @Override
     protected void initData() {
+
         ImageLoader.getInstance().displayImage("http://images2015.cnblogs.com/blog/862876/201602/862876-20160227193813393-1620063866.png",binding.iv);
         List<TitleModel.Bean> list= new ArrayList<>();
         list.add(new TitleModel.Bean("List",ArrayListAct.class));

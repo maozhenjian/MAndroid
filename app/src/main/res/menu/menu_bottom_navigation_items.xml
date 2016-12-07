@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@mipmap/ic_launcher"
+        android:title="aaa" />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@mipmap/ic_launcher"
+        android:title="bbb" />
+    <item
+        android:id="@+id/action_navigation2"
+        android:icon="@mipmap/ic_launcher"
+        android:title="ccc" />
+
+    <item
+        android:id="@+id/action_navigation3"
+        android:icon="@mipmap/ic_launcher"
+        android:title="ccc" />
+
+</menu>

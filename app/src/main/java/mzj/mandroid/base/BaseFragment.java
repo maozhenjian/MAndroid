@@ -38,10 +38,10 @@ public abstract class BaseFragment<BindingType extends ViewDataBinding> extends 
         {
             binding = DataBindingUtil.inflate(inflater,getLayoutId(),container,false);
         }
-        Log.e("TAG",getClass().getSimpleName().toString());
+        Log.e("TAG",getClass().getSimpleName());
         return binding.getRoot();
     }
-
-    public abstract void initData();
     public abstract int getLayoutId();
+    public abstract void initData();
+
 }
